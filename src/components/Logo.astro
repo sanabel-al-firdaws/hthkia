@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import logo from '../assets/logo2.png';
+import logo from '../assets/logo.svg';
 interface Props {
     variant?: 'header' | 'footer' | 'dark';
 }
@@ -25,12 +25,18 @@ const getLogoClass = () => {
   href="/"
   class:list={[
     'logo uppercase font-logo transition-colors duration-200 font-light',
-    'flex items-center gap-3 flex-row-reverse', // reverse image to the right
+    'flex items-center  flex-row-reverse', // reverse image to the right
     getLogoClass()
   ]}
->  <span style="color: #FFBF08;">
-   حشود ذكية
-  </span>
-  <Image src={logo} alt="Titan Core" height={50} width={50} />
+> 
+  <Image src={logo} alt="SmartCrowds" height={50} width={50} />
 
 </a>
+
+<!-- color 1 : #E2E0DF  color 2 #D0C2A9 coloe 3 #5C331C color 4 #32160B -->
+ <!-- #746d6d -->
+
+
+
+
+ <!--  -->

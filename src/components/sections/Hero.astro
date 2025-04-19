@@ -22,38 +22,40 @@ interface Props {
 const { content } = Astro.props;
 const opacity = content.overlayOpacity ?? 1; // Default opacity if not specified
 ---
-<section class="bg-[#121012] header-offset relative text-white">
-    <div class="site-container mx-auto px-4 py-small relative z-10 flex flex-col md:items-center md:justify-center md:text-center">
-      
-      <h1 
-        class="text-4xl sm:text-5xl font-bold text-balance text-white"
-        data-aos="fade-up"
-      >
-        {content.title}
-      </h1>
-  
-      <p 
-        class="mt-4 max-w-2xl text-lg text-gray-300 text-balance"
-        data-aos="fade-up"
-        data-aos-delay="100"
-      >
-        {content.description}
-      </p>
-  
-      {content.buttons && content.buttons.length > 0 && (
-        <div class="flex flex-wrap gap-4 mt-8 justify-center" data-aos="fade-up" data-aos-delay="200">
-          {content.buttons.map((button) => (
-            <Button
+<section class="bg-[#E8E8E0] header-offset relative text-[#666666]">
+  <div class="site-container mx-auto px-4 py-small relative z-10 flex flex-col md:items-center md:justify-center md:text-center">
+    
+    <h1 
+      class="text-4xl sm:text-5xl font-bold text-[#666666]  drop-shadow-lg" 
+      data-aos="fade-up"
+    >
+      {content.title}
+    </h1>
+
+    <p 
+      class="mt-4 max-w-3xl text-xl text-[#AC9480] text-balance"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+      {content.description}
+    </p>
+
+    {content.buttons && content.buttons.length > 0 && (
+      <div class="flex flex-wrap gap-4 mt-8 justify-center" data-aos="fade-up" data-aos-delay="200">
+        {content.buttons.map((button) => (
+          <Button
             variant='primary'
-              href={button.link}
-              target={button.target || '_self'}
-          
-            >
-              {button.text}
-            </Button>
-          ))}
-        </div>
-      )}
-    </div>
-  </section>
+            href={button.link}
+            target={button.target || '_self'}
+            class="hover:bg-[#CBB898] hover:text-[#3D2415] transition-colors duration-300"
+          >
+            {button.text}
+          </Button>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+
+
   

@@ -24,7 +24,7 @@ const { footerCta } = Astro.props;
 const defaultCta = {
   title: "Ready to get started?",
   description: "Join us today and transform your digital presence with our innovative solutions.",
-  hideCta: false,
+  hideCta: true,
   button: {
     text: "Contact Us",
     link: "/contact",
@@ -35,15 +35,15 @@ const defaultCta = {
 const cta = footerCta || defaultCta;
 const currentYear = new Date().getFullYear();
 ---
-<footer class={`bg-[#121012] text-white pt-${cta.hideCta ? 'large' : 'small'} pb-large`}>
+<footer class={`bg-[#E8E8E0] text-[#666666] pt-${cta.hideCta ? 'large' : 'small'} pb-large`}>
   <div class="site-container mx-auto px-4">
     
     {!cta.hideCta && (
-      <div class="text-center border-b border-[#FFBF08]/30 mb-16 py-12">
-        <h2 class="text-4xl font-bold mb-4 text-white" data-aos="fade-up">
+      <div class="text-center border-b border-[#BFA67D]/40 mb-16 py-12">
+        <h2 class="text-4xl font-bold mb-4 text-[#3D2415]" data-aos="fade-up">
           {cta.title}
         </h2>
-        <p class="text-white/80 mb-6 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+        <p class="text-[#666666] mb-6 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
           {cta.description}
         </p>
         <Button 
@@ -59,23 +59,23 @@ const currentYear = new Date().getFullYear();
       </div>
     )}
 
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-[#FFBF08]/20 pb-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-[#BFA67D]/30 pb-12">
       <div class="col-span-1">
         <Logo variant="footer" />
-        <p class="mt-4 text-sm text-white/70 leading-relaxed">
-          Empowering your digital journey with innovative solutions.
+        <p class="mt-4 text-sm text-[#666666] leading-relaxed">
+          تمتع بتجربة استضافة أحداث أكثر سلامة وتنظيما
         </p>
       </div>
 
       <div class="col-span-1">
-        <h3 class="text-lg font-semibold text-[#FFBF08] mb-4">Quick Links</h3>
+        <h3 class="text-lg font-semibold text-[#3D2415] mb-4">روابط مهمة</h3>
         <nav>
           <ul class="space-y-2">
             {footerMenu.map(item => (
               <li>
                 <a 
                   href={item.link} 
-                  class="text-sm text-white/70 hover:text-[#FFBF08] transition-colors duration-200"
+                  class="text-base text-[#666666] hover:text-[#A48963] transition-colors duration-200"
                 >
                   {item.name}
                 </a>
@@ -85,12 +85,12 @@ const currentYear = new Date().getFullYear();
         </nav>
       </div>
 
-      {/* Add more columns like "Resources" or "Contact" if needed */}
+      {/* Add more columns here if needed */}
     </div>
 
-    <div class="mt-10 flex flex-col md:flex-row justify-between items-center text-white/60 text-sm">
+    <div class="mt-10 flex flex-col md:flex-row justify-between items-center text-[#666666] text-sm">
       <div>
-        © {currentYear} <span class="text-white">{siteConfig.companyName}</span>. All rights reserved.
+        © {currentYear} <span class="text-[#3D2415] font-medium">{siteConfig.companyName}</span>. All rights reserved.
       </div>
 
       <nav class="mt-4 md:mt-0">
@@ -99,7 +99,7 @@ const currentYear = new Date().getFullYear();
             <li>
               <a 
                 href={item.link} 
-                class="hover:text-[#FFBF08] transition-colors duration-200"
+                class="hover:text-[#A48963] transition-colors duration-200"
               >
                 {item.name}
               </a>
@@ -110,3 +110,5 @@ const currentYear = new Date().getFullYear();
     </div>
   </div>
 </footer>
+
+

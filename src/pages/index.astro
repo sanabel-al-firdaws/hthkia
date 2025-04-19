@@ -27,18 +27,13 @@ const seoDescription = "A modern, high-performance Astro theme for developer por
 const heroContent = {
     title:  'متخصصون في تأمين الفعاليات و الأفراد' ,
     description: 'نقوم بتوفير خدمات الحراسة الأمنية للمنشآت، والمرافق، والفعاليات الخاصة والعامة، بالإضافة إلى توفير نقل آمن وموثوق لعملائنا',
-    buttons: [
-        {
-            text: 'تواصل معنا',
-            link: '/contact',
-            target: '_self'
-        },
-        {
-            text: 'View on GitHub',
-            link: 'https://github.com/rspisarski/titan-core',
-            target: '_blank'
-        }
-    ],
+    // buttons: [
+    //     {
+    //         text: 'تواصل معنا',
+    //         link: '/contact',
+    //         target: '_self'
+    //     }
+    // ],
     backgroundImage: heroImage,
     overlayOpacity: 0.2
 }
@@ -78,8 +73,8 @@ const styleGuideSection2 = {
 }
 const featuresSection = {
     // eyebrow: "CORE FEATURES",
-    title: "تتنوع خدماتنا الأمنية من",
-    // description: "Titan Core gives you a solid foundation with essential features while staying lightweight and customizable. Start with a clean slate and build exactly what you need without the bloat.",
+    title: "من مميزات خدماتنا الأمنية",
+    // description: "SmartCrowds gives you a solid foundation with essential features while staying lightweight and customizable. Start with a clean slate and build exactly what you need without the bloat.",
     features: featureLists.main.features,
     // button: {
     //     text: "View Theme Info",
@@ -89,12 +84,12 @@ const featuresSection = {
 }
 
 const FooterCta = {
-    eyebrow: "Join The Community",
-    title: ' Start Building With Titan Core Today',
-    description: 'Titan Core is open-source and constantly improving. Join our community of developers to contribute, get support, or showcase what you\'ve built.',
-    hideCta: false,
+    // eyebrow: "Join The Community",
+    title: 'Start Building With SmartCrowds Today',
+    description: 'SmartCrowds is open-source and constantly improving. Join our community of developers to contribute, get support, or showcase what you\'ve built.',
+    hideCta: true,
     button: {
-        text: 'Download Titan Core',
+        text: 'Download SmartCrowds',
         link: 'https://github.com/rspisarski/titan-core',
         target: '_blank'
     }
@@ -105,14 +100,14 @@ const FooterCta = {
 const sideBySideStats = {
     eyebrow: "Stats",
     title: "Built for Speed and Flexibility",
-    description: "Titan Core is designed with performance and developer experience in mind. Our lightweight theme gives you all the essentials without the bloat, letting you build exactly what you need with impressive speed.",
+    description: "SmartCrowds is designed with performance and developer experience in mind. Our lightweight theme gives you all the essentials without the bloat, letting you build exactly what you need with impressive speed.",
     variant: 'side-by-side' as const,
     stats: statsLists.withContent.stats,
     content: {
         title: "Built for Speed and Flexibility",
-        description: "Titan Core is designed with performance and developer experience in mind. Our lightweight theme gives you all the essentials without the bloat, letting you build exactly what you need with impressive speed.",
+        description: "SmartCrowds is designed with performance and developer experience in mind. Our lightweight theme gives you all the essentials without the bloat, letting you build exactly what you need with impressive speed.",
         button: {
-            text: "Discover Titan Core",
+            text: "Discover SmartCrowds",
             link: "/theme-info",
             variant: "primary" as const
         }
@@ -162,7 +157,7 @@ import Card from '@components/Card.astro';
 <Layout footerCta={FooterCta} title={seoTitle} description={seoDescription}>
     <Hero content={heroContent} />
 
-    <section class="relative py-12 bg-[#121012]">
+    <section class="relative py-12 bg-[#E2E0DF]">
         <div class="site-container mx-auto px-4">
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
             
