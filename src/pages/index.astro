@@ -13,17 +13,23 @@ import Faqs from '@components/sections/Faqs.astro';
 import { faqLists } from '@data/faqs';
 import RecentPosts from '@components/sections/RecentPosts.astro';
 import heroImage from '../assets/images/home/default-hero-2.jpg';
-import styleGuideImage from '../assets/images/home/developer.jpg';
+import image from '../assets/photo/image.jpg';
+import image1 from '../assets/photo/image1.jpg';
+import image2 from '../assets/photo/image2.jpg';
+import image3 from '../assets/photo/image3.jpg';
+import image4 from '../assets/photo/image4.jpg';
+import image5 from '../assets/photo/image5.jpg';
+
 
 const seoTitle = "Modern, High-Performance Astro Theme";
 const seoDescription = "A modern, high-performance Astro theme for developer portfolios and documentation sites.";
 
 const heroContent = {
-    title: 'The Foundation for Beautiful Astro JS Websites',
-    description: 'Titan Core is a minimal, performance-focused Astro JS theme that serves as the perfect foundation for your next web project. Built with clean code and modern best practices, it\'s designed to be extended and customized to your specific needs.',
+    title:  'متخصصون في تأمين الفعاليات و الأفراد' ,
+    description: 'نقوم بتوفير خدمات الحراسة الأمنية للمنشآت، والمرافق، والفعاليات الخاصة والعامة، بالإضافة إلى توفير نقل آمن وموثوق لعملائنا',
     buttons: [
         {
-            text: 'Get Started',
+            text: 'تواصل معنا',
             link: '/contact',
             target: '_self'
         },
@@ -36,17 +42,50 @@ const heroContent = {
     backgroundImage: heroImage,
     overlayOpacity: 0.2
 }
+ 
+const styleGuideSection = {
+    eyebrow: "من خدماتنا",
+    headline: "توفير الأمن في الفعاليات",
+    description: "نمتلك فريقاً مدرباً على أعلى مستوى من الكفاءة والاحترافية، ونحرص على تطبيق أعلى معايير السلامة والجودة في جميع خدماتنا.",
+    image: {
+        src: image1,
+        alt: "Featured image"
+    },
+    // buttons: [
+    //     {
+    //         text: "Explore Style Guide",
+    //         link: "/style-guide",
+    //         variant: "primary" as const
+    //     }
+    // ]
+}
 
+const styleGuideSection2 = {
+    eyebrow: "من خدماتنا",
+    headline: "توفير الأمن في الفعاليات",
+    description: "نمتلك فريقاً مدرباً على أعلى مستوى من الكفاءة والاحترافية، ونحرص على تطبيق أعلى معايير السلامة والجودة في جميع خدماتنا.",
+    image: {
+        src: image2,
+        alt: "Featured image"
+    },
+    // buttons: [
+    //     {
+    //         text: "Explore Style Guide",
+    //         link: "/style-guide",
+    //         variant: "primary" as const
+    //     }
+    // ]
+}
 const featuresSection = {
-    eyebrow: "CORE FEATURES",
-    title: "Everything You Need, Nothing You Don't",
-    description: "Titan Core gives you a solid foundation with essential features while staying lightweight and customizable. Start with a clean slate and build exactly what you need without the bloat.",
+    // eyebrow: "CORE FEATURES",
+    title: "تتنوع خدماتنا الأمنية من",
+    // description: "Titan Core gives you a solid foundation with essential features while staying lightweight and customizable. Start with a clean slate and build exactly what you need without the bloat.",
     features: featureLists.main.features,
-    button: {
-        text: "View Theme Info",
-        link: "/theme-info",
-        variant: "primary" as const
-    }
+    // button: {
+    //     text: "View Theme Info",
+    //     link: "/theme-info",
+    //     variant: "primary" as const
+    // }
 }
 
 const FooterCta = {
@@ -61,22 +100,7 @@ const FooterCta = {
     }
 }
 
-const styleGuideSection = {
-    eyebrow: "Design System",
-    headline: "Consistent & Beautiful Components",
-    description: "Titan Core comes with a complete style guide to ensure your projects maintain visual consistency. From typography to interactive elements, we've carefully crafted each component.",
-    image: {
-        src: styleGuideImage,
-        alt: "Featured image"
-    },
-    buttons: [
-        {
-            text: "Explore Style Guide",
-            link: "/style-guide",
-            variant: "primary" as const
-        }
-    ]
-}
+
 
 const sideBySideStats = {
     eyebrow: "Stats",
@@ -130,15 +154,37 @@ const recentPostsSection = {
         variant: "primary" as const
     }
 }
+import { Image } from 'astro:assets';
+import Card from '@components/Card.astro';
+
 ---
 
 <Layout footerCta={FooterCta} title={seoTitle} description={seoDescription}>
     <Hero content={heroContent} />
+
+    <section class="relative py-12 bg-[#121012]">
+        <div class="site-container mx-auto px-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+            
+            <Card title="حراسة شخصية" subtitle="في الرياض" image={image} />
+            <Card title="إدارة حشود" subtitle="في جدة" image={image1} />
+            <!-- <Card title="حراسة شخصية" subtitle="في الرياض" image={image2} /> -->
+            <Card title="إدارة حشود" subtitle="في جدة" image={image3} />
+            <Card title="حراسة شخصية" subtitle="في الرياض" image={image4} />
+            <Card title="إدارة حشود" subtitle="في جدة" image={image5} />
+ 
+          </div>
+        </div>
+      </section>
     <Features content={featuresSection} padding="base" background="light" />
-    <RecentPosts content={recentPostsSection} background="base" padding="base" postsToShow={3} category="Theme Usage"/>
-    <SplitPanel content={styleGuideSection} imagePosition="right" background="light" padding="base" />
-    <CtaBanner content={mainCta} variant="contained" background="light" paddingBottom="base" />
+    <!-- <RecentPosts content={recentPostsSection} background="base" padding="base" postsToShow={3} category="Theme Usage"/> -->
+    <!-- <SplitPanel content={styleGuideSection} imagePosition="right" background="dark" padding="base" />
+    <SplitPanel content={styleGuideSection2} imagePosition="left" background="dark" padding="base" />
+    <SplitPanel content={styleGuideSection} imagePosition="right" background="light" padding="base" /> -->
+
+
+    <!-- <CtaBanner content={mainCta} variant="contained" background="light" paddingBottom="base" />
     <Logos content={logosSection} background="base" padding='small'/>
     <Stats content={sideBySideStats} background='dark' padding="base"/>
-    <Faqs content={faqsSection} background="base" padding="base" />
+    <Faqs content={faqsSection} background="base" padding="base" /> -->
 </Layout>

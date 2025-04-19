@@ -23,7 +23,7 @@ const isCurrentPage = (link: string) => {
 
 <header class="fixed top-0 z-50 w-full left-0">
     <div class="site-container mx-auto px-4 mt-4">
-        <div class="flex justify-between items-center bg-white py-4 rounded-lg px-4 border-black border">
+        <div class="flex justify-between items-center bg-[#121012] py-4 rounded-lg px-4 border-[#FFBF08]/30 border">
             <Logo />
             <nav class="relative flex items-center gap-2 lg:gap-8" aria-label="Site Navigation">
                 {/* Desktop Menu */}
@@ -35,10 +35,10 @@ const isCurrentPage = (link: string) => {
                                     <a
                                         href={item.link}
                                         class:list={[
-                                            'text-small font-medium rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-nav-text-active',
+                                            'text-small font-medium rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-[#FFBF08]',
                                             isCurrentPage(item.link)
-                                                ? 'text-nav-text-current font-semibold'
-                                                : 'text-nav-text hover:text-nav-text-hover',
+                                                ? 'text-[#FFBF08] font-semibold'
+                                                : 'text-[#F7F7F7] hover:text-[#FFBF08]',
                                         ]}
                                         aria-current={isCurrentPage(item.link) ? 'page' : undefined}
                                     >
@@ -72,10 +72,10 @@ const isCurrentPage = (link: string) => {
                                                 <a
                                                     href={child.link}
                                                     class:list={[
-                                                        'block px-4 text-small py-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-nav-text-active',
+                                                        'block px-4 text-small py-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#FFBF08]',
                                                         isCurrentPage(child.link)
-                                                            ? 'text-nav-text-current font-semibold'
-                                                            : 'text-nav-text hover:text-nav-text-hover',
+                                                        ? 'text-[#FFBF08] font-semibold'
+                                                        : 'text-[#F7F7F7] hover:text-[#FFBF08]',
                                                     ]}
                                                     aria-current={isCurrentPage(child.link) ? 'page' : undefined}
                                                 >
@@ -108,7 +108,7 @@ const isCurrentPage = (link: string) => {
 
                 {/* Mobile Menu Panel */}
                 <div
-                    class="mobile-menu fixed inset-0 z-20 px-8 pt-20 bg-primary lg:hidden hidden opacity-0 scale-95 transform transition-all duration-200 ease-out overflow-y-auto"
+                    class="mobile-menu fixed inset-0 z-20 px-8 pt-20 bg-[#FFBF08] lg:hidden hidden opacity-0 scale-95 transform transition-all duration-200 ease-out overflow-y-auto"
                 >
                     <ul class="flex flex-col gap-4">
                         {
@@ -121,8 +121,8 @@ const isCurrentPage = (link: string) => {
                                                 class:list={[
                                                     'py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-nav-mobile-text-active',
                                                     isCurrentPage(item.link)
-                                                        ? 'text-nav-mobile-text-current font-semibold'
-                                                        : 'text-nav-mobile-text hover:text-nav-mobile-text-hover',
+                                                    ? 'text-[#FFBF08] font-semibold'
+                                                    : 'text-[#F7F7F7] hover:text-[#FFBF08]',
                                                 ]}
                                                 aria-current={isCurrentPage(item.link) ? 'page' : undefined}
                                             >
@@ -131,10 +131,10 @@ const isCurrentPage = (link: string) => {
                                             {item.children && (
                                                 <button
                                                     class:list={[
-                                                        'mobile-submenu-button p-2 -mr-2 rounded-md focus:outline-none focus:ring-2 focus:ring-nav-mobile-text-active',
+                                                        'mobile-submenu-button p-2 -mr-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FFBF08]',
                                                         isCurrentPage(item.link)
-                                                            ? 'text-nav-mobile-text-current'
-                                                            : 'text-nav-mobile-text hover:text-nav-mobile-text-hover',
+                                                        ? 'text-[#FFBF08] font-semibold'
+                                                        : 'text-[#F7F7F7] hover:text-[#FFBF08]',
                                                     ]}
                                                     aria-label={`Toggle ${item.name} submenu`}
                                                     aria-expanded="false"
@@ -153,10 +153,10 @@ const isCurrentPage = (link: string) => {
                                                         <a
                                                             href={child.link}
                                                             class:list={[
-                                                                'block py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-nav-mobile-text-active',
+                                                                'block py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FFBF08]',
                                                                 isCurrentPage(child.link)
-                                                                    ? 'text-nav-mobile-text-current font-semibold'
-                                                                    : 'text-nav-mobile-text hover:text-nav-mobile-text-hover',
+                                                                ? 'text-[#FFBF08] font-semibold'
+                                                                : 'text-[#F7F7F7] hover:text-[#FFBF08]',
                                                             ]}
                                                             role="menuitem"
                                                             aria-current={

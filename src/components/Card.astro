@@ -1,0 +1,42 @@
+---
+export interface Props {
+  title: string;
+  subtitle: string;
+  image: any;
+  alt?: string;
+}
+
+const { title, subtitle, image, alt = `${title} Project` } = Astro.props;
+import {Image} from 'astro:assets';
+---
+<div
+  class="group relative flex flex-col rounded-2xl overflow-hidden transition-shadow duration-300 bg-[#121012] text-white border border-[#FFBF08]/40 hover:border-[#FFBF08] shadow-md hover:shadow-gold-glow"
+  data-aos="fade-up"
+  data-aos-delay={100}
+  data-aos-duration="800"
+>
+  <a href="#" class="flex flex-col">
+    <div class="relative overflow-hidden">
+      <span class="absolute inset-0 -mt-12 w-1/2 translate-x-[250%] rotate-12 bg-[#FFBF08] opacity-20 group-hover:translate-x-[-250%] transition-all duration-500 ease-out z-10 pointer-events-none" />
+
+      <Image
+        src={image}
+        alt={alt}
+        width={896}
+        height={1280}
+        quality={80}
+        format="webp"
+        class="w-full aspect-[3/4] object-cover group-hover:scale-105 group-hover:brightness-110 transition-transform duration-500 ease-in-out"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+
+    <div class="p-4">
+      <h3 class="text-lg font-semibold text-white group-hover:text-[#FFBF08] transition-colors duration-300">
+        {title}
+      </h3>
+      <p class="text-sm text-gray-400 mt-1">{subtitle}</p>
+    </div>
+  </a>
+</div>

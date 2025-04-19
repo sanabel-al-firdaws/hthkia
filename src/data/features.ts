@@ -1,4 +1,4 @@
-import { Zap, Shield, Heart, Coffee, Smile, Type, TabletSmartphone, CodeXml } from 'lucide-astro';
+import { Zap, Shield,DollarSign, Heart, Coffee, Smile, Type, TabletSmartphone, CodeXml } from 'lucide-astro';
 
 // Define the LucideIcon type based on the structure of Lucide icons
 type LucideIcon = typeof Zap;
@@ -21,13 +21,13 @@ export const featureLists: Record<string, FeatureList> = {
         features: [
             {
                 icon: Zap,
-                title: 'Lightning Fast Performance',
-                description: 'Optimized for speed and performance'
+                title: 'حراسة شخصية',
+                description: 'حراسة الأفراد المهمين سواء في المعارض أو الفنادق أو الأحداث'
             },
             {
-                icon: Shield,
-                title: 'SEO Optimized Structure',
-                description: 'Built with SEO best practices in mind'
+                icon: DollarSign,
+                title: 'أسعار تنافسية',
+                description: 'كن واثقا أننا سنعطيك أسعار ترضيك'
             },
             {
                 icon: TabletSmartphone,

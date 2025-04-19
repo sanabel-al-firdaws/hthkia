@@ -42,74 +42,64 @@ const paddingClass = getPaddingClass({
     paddingBottom: Astro.props.paddingBottom 
 });
 ---
-
-<section class:list={["relative", bgColor, paddingClass]}>
+<section class:list={["relative", "bg-[#121012]", "py-20"]}>
     <div class="site-container px-4">
-        {(title || description) && (
-            <div class="text-center mb-16 max-w-3xl mx-auto">
-                {eyebrow && (
-                    <Eyebrow 
-                        text={eyebrow} 
-                        background={background} 
-                    />
-                )}
-                {title && (
-                    <h2 class:list={[textColor]} data-aos="fade-up">
-                        {title}
-                    </h2>
-                )}
-                {description && (
-                    <p class:list={["mt-4", textColor, "opacity-90"]} data-aos="fade-up" data-aos-delay="100">
-                        {description}
-                    </p>
-                )}
-                {button && (
-                    <div class="mt-8" data-aos="fade-up" data-aos-delay="200">
-                        <Button
-                            href={button.link}
-                            variant={button.variant || 'primary'}
-                        >
-                            {button.text}
-                        </Button>
-                    </div>
-                )}
+      {(title || description) && (
+        <div class="text-center mb-16 max-w-3xl mx-auto">
+          {eyebrow && (
+            <Eyebrow 
+              text={eyebrow} 
+              background="dark" 
+            />
+          )}
+          {title && (
+            <h2 class="text-white text-3xl font-bold" data-aos="fade-up">
+              {title}
+            </h2>
+          )}
+          {description && (
+            <p class="mt-4 text-white opacity-80" data-aos="fade-up" data-aos-delay="100">
+              {description}
+            </p>
+          )}
+          {button && (
+            <div class="mt-8" data-aos="fade-up" data-aos-delay="200">
+              <Button
+                href={button.link}
+                variant={button.variant || 'primary'}
+              >
+                {button.text}
+              </Button>
             </div>
-        )}
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-auto-fit gap-8 auto-rows-fr">
-            {features.map((feature, index) => (
-                <div 
-                    class:list={[
-                        "p-6 rounded-lg border border-black",
-                        background === 'dark' ? 'bg-background-base/10' : 'bg-background/90',
-                        "flex flex-col"
-                    ]}
-                    data-aos="fade-up"
-                    data-aos-delay={index * 100}
-                >
-                    <div class:list={[
-                        "w-12 h-12 flex items-center justify-center rounded-lg mb-4",
-                        "bg-primary"
-                    ]}>
-                        <feature.icon
-                            size={24}
-                            class="text-white"
-                        />
-                    </div>
-                    <h3 class:list={["text-h4 mb-2", textColor]}>
-                        {feature.title}
-                    </h3>
-                    <p class:list={["text-base", textColor, "opacity-90"]}>
-                        {feature.description}
-                    </p>
-                </div>
-            ))}
+          )}
         </div>
+      )}
+  
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-auto-fit gap-8 auto-rows-fr">
+        {features.map((feature, index) => (
+          <div 
+            class="p-6 rounded-lg border border-[#FFBF08]/40 bg-[#2A2A2A] flex flex-col hover:border-[#FFBF08] transition-colors duration-300"
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+          >
+            <div class="w-12 h-12 flex items-center justify-center rounded-lg mb-4 bg-[#FFBF08]">
+              <feature.icon size={24} class="text-black" />
+            </div>
+            <h3 class="text-xl text-white font-semibold mb-2 group-hover:text-[#FFBF08] transition-colors duration-300">
+              {feature.title}
+            </h3>
+            <p class="text-white opacity-80">
+              {feature.description}
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
-</section>
-
-<style>
+  </section>
+  
+  <style>
     .grid-cols-auto-fit {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
-</style>
+  </style>
+  

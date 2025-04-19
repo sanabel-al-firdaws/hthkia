@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import logo from '../assets/astro.svg';
+import logo from '../assets/logo2.png';
 interface Props {
     variant?: 'header' | 'footer' | 'dark';
 }
@@ -21,13 +21,16 @@ const getLogoClass = () => {
     }
 };
 ---
+<a
+  href="/"
+  class:list={[
+    'logo uppercase font-logo transition-colors duration-200 font-light',
+    'flex items-center gap-3 flex-row-reverse', // reverse image to the right
+    getLogoClass()
+  ]}
+>  <span style="color: #FFBF08;">
+   حشود ذكية
+  </span>
+  <Image src={logo} alt="Titan Core" height={50} width={50} />
 
-<a href="/" class:list={['logo uppercase font-logo transition-colors duration-200 font-light', getLogoClass()]}>
-    {
-        // If image is the only element in this link, its alt attribute should be a textual representation.
-        // Please, use something like your company name or “Home”, not “logo.”
-        // If there is link text, leave alt empty.
-    }
-    <Image src={logo} alt="" class="hidden" />
-    <span class="font-bold">Titan</span> Core
 </a>

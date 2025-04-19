@@ -1,5 +1,5 @@
 export const siteConfig = {
-  companyName: 'Titan Core',
+  companyName: 'حشود ذكية',
   siteUrl: 'https://titan-core.com',
   Socials: {
       xSocial: 'https://x.com/astrodotbuild',
@@ -14,7 +14,7 @@ export const siteConfig = {
 
 export const SEO = {
   Separator: '|',
-  SiteName: 'Titan Core',
+  SiteName: 'حشود ذكية',
   defaultDescription: 'A modern, high-performance Astro JS theme',
 };
   
