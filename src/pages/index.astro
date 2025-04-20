@@ -13,20 +13,20 @@ import Faqs from '@components/sections/Faqs.astro';
 import { faqLists } from '@data/faqs';
 import RecentPosts from '@components/sections/RecentPosts.astro';
 import heroImage from '../assets/images/home/default-hero-2.jpg';
-import image from '../assets/photo/image.jpg';
-import image1 from '../assets/photo/image1.jpg';
-import image2 from '../assets/photo/image2.jpg';
-import image3 from '../assets/photo/image3.jpg';
-import image4 from '../assets/photo/image4.jpg';
-import image5 from '../assets/photo/image5.jpg';
+import image from '../content/blog/images/imagination-park.jpg';
+import image1 from '../content/blog/images/electric-car-rally.jpg';
+import image2 from '../content/blog/images/flower-festival.jpg';
+import image3 from '../content/blog/images/hail.jpg';
+import image4 from '../content/blog/images/noor-riyadh.jpg';
 
 
-const seoTitle = "Modern, High-Performance Astro Theme";
-const seoDescription = "A modern, high-performance Astro theme for developer portfolios and documentation sites.";
+
+const seoTitle = "حشود ذكية | SmartCrowds";
+const seoDescription = 'نقوم بتوفير خدمات  تنظيم سير الحشود والحراسة الأمنية للأفراد البارزين';
 
 const heroContent = {
-    title:  'متخصصون في تأمين الفعاليات و الأفراد' ,
-    description: 'نقوم بتوفير خدمات الحراسة الأمنية للمنشآت، والمرافق، والفعاليات الخاصة والعامة، بالإضافة إلى توفير نقل آمن وموثوق لعملائنا',
+    title:  'متخصصون في  تنظيم الحشود وتأمينهم' , 
+    description: 'نقوم بتوفير خدمات  تنظيم سير الحشود والحراسة الأمنية للأفراد البارزين',
     // buttons: [
     //     {
     //         text: 'تواصل معنا',
@@ -38,42 +38,10 @@ const heroContent = {
     overlayOpacity: 0.2
 }
  
-const styleGuideSection = {
-    eyebrow: "من خدماتنا",
-    headline: "توفير الأمن في الفعاليات",
-    description: "نمتلك فريقاً مدرباً على أعلى مستوى من الكفاءة والاحترافية، ونحرص على تطبيق أعلى معايير السلامة والجودة في جميع خدماتنا.",
-    image: {
-        src: image1,
-        alt: "Featured image"
-    },
-    // buttons: [
-    //     {
-    //         text: "Explore Style Guide",
-    //         link: "/style-guide",
-    //         variant: "primary" as const
-    //     }
-    // ]
-}
 
-const styleGuideSection2 = {
-    eyebrow: "من خدماتنا",
-    headline: "توفير الأمن في الفعاليات",
-    description: "نمتلك فريقاً مدرباً على أعلى مستوى من الكفاءة والاحترافية، ونحرص على تطبيق أعلى معايير السلامة والجودة في جميع خدماتنا.",
-    image: {
-        src: image2,
-        alt: "Featured image"
-    },
-    // buttons: [
-    //     {
-    //         text: "Explore Style Guide",
-    //         link: "/style-guide",
-    //         variant: "primary" as const
-    //     }
-    // ]
-}
 const featuresSection = {
     // eyebrow: "CORE FEATURES",
-    title: "من مميزات خدماتنا الأمنية",
+    title: "ما الذي يميزنا عن غيرنا؟",
     // description: "SmartCrowds gives you a solid foundation with essential features while staying lightweight and customizable. Start with a clean slate and build exactly what you need without the bloat.",
     features: featureLists.main.features,
     // button: {
@@ -97,58 +65,7 @@ const FooterCta = {
 
 
 
-const sideBySideStats = {
-    eyebrow: "Stats",
-    title: "Built for Speed and Flexibility",
-    description: "SmartCrowds is designed with performance and developer experience in mind. Our lightweight theme gives you all the essentials without the bloat, letting you build exactly what you need with impressive speed.",
-    variant: 'side-by-side' as const,
-    stats: statsLists.withContent.stats,
-    content: {
-        title: "Built for Speed and Flexibility",
-        description: "SmartCrowds is designed with performance and developer experience in mind. Our lightweight theme gives you all the essentials without the bloat, letting you build exactly what you need with impressive speed.",
-        button: {
-            text: "Discover SmartCrowds",
-            link: "/theme-info",
-            variant: "primary" as const
-        }
-    }
-};
 
-const mainCta = {
-    eyebrow: "Build Blocks",
-    title: "Ready-to-Use Components",
-    description: "Save development time with our pre-built, accessible components. Each one is designed to integrate seamlessly with your projects while maintaining excellent performance.",
-    button: {
-        text: "View All Components",
-        link: "/components",
-        variant: "primary" as const,
-        target: "_self" as const
-    }
-};
-
-
-const logosSection = {
-    eyebrow: "Our Clients",
-    logos: logoLists.main.logos
-}
-
-const faqsSection = {
-    eyebrow: "FAQs",
-    title: 'Frequently Asked Questions',
-    description: 'Find answers to common questions about our platform and services.',
-    faqs: faqLists.main.faqs
-}
-
-const recentPostsSection = {
-    eyebrow: "LATEST INSIGHTS",
-    title: " Learn From Our Experience",
-    description: "Explore our latest articles on Astro JS development, theme customization tips, and web performance best practices.",
-    button: {
-            text: "View All Posts",
-            link: "/blog",
-        variant: "primary" as const
-    }
-}
 import { Image } from 'astro:assets';
 import Card from '@components/Card.astro';
 import Button from '@components/ui/Button.astro';
@@ -161,18 +78,18 @@ import Button from '@components/ui/Button.astro';
     <section class="relative py-12" style="background-color: var(--color-background);">
         <div class="site-container mx-auto px-4">
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-            <Card title="حراسة شخصية" subtitle="في الرياض" image={image} />
-            <Card title="إدارة حشود" subtitle="في جدة" image={image1} />
-            {/* <Card title="حراسة شخصية" subtitle="في الرياض" image={image2} /> */}
-            <Card title="إدارة حشود" subtitle="في جدة" image={image3} />
-            <Card title="حراسة شخصية" subtitle="في الرياض" image={image4} />
-            <Card title="إدارة حشود" subtitle="في جدة" image={image5} />
+            <Card title="Imagination Park" subtitle="في الرياض" image={image} link="/blog/imagination-park" />
+            <Card title="رالي السيارات الكهربائية" subtitle="في العلا" image={image1} link="/blog/electric-car-rally" />
+            <Card title="مهرجان الزهور" subtitle="في ينبع الصناعية" image={image2} link="/blog/flower-festival" />
+            <Card title="موسم حائل 2020" subtitle="في حائل" image={image3} link="/blog/hail" />
+            <Card title="نور الرياض 2022" subtitle="في الرياض" image={image4} link="/blog/noor-riyadh" />
+
           </div>
-      
+       
           {/* View More Button */}
           <div class="mt-12 flex justify-center" data-aos="fade-up" data-aos-delay="200">
             <Button 
-              href="/work" 
+              href="/blog" 
               variant="primary"
               class="text-base font-semibold px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
             >

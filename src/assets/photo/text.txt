@@ -1,27 +1,67 @@
-[data-theme="main"] {
-    --color-primary: #583300;
-    --color-primary-light: #fffbf7;
-    --color-primary-dark: #4f3300;
-    --color-secondary: #583300;
-    --color-secondary-light: #ebebeb;
-    --color-secondary-dark: #016e8f;
-    --color-accent: #333611;
-    --color-background: #ffffff;
-    --color-headline: #5c5c5c;
-    --color-body-base: #333333;
+[4/20, 5:25 AM] عبدالحكيم الشنقيطي: Diriyah Season 2019 â€“ Zone 2
+Provided traffic management and security services for Zone 2 of the Diriyah Season, a prestigious event with international sporting, cultural, and entertainment activities.
 
-    /* Derived variables */
-    --color-input: var(--color-background-light);
-    --color-input-light: var(--color-background-light);
-    --color-input-dark: var(--color-background-dark);
-    --color-input-text: var(--color-body-base);
-    --color-input-text-light: var(--color-headline-light);
-    --color-input-text-dark: var(--color-headline-dark);
-    --color-nav-text: var(--color-body-base);
-    --color-nav-text-hover: var(--color-primary);
-    --color-nav-text-active: var(--color-primary);
-    --color-nav-text-current: var(--color-primary);
-    --color-nav-submenu-bg: var(--color-background-light);
-    --color-header-logo: var(--color-primary);
-    --color-footer-logo: var(--color-primary);
-}
+Hail Season 2020
+Handled traffic flow and security for the Hail Season cultural festival, known for its outdoor attractions and large audiences.
+
+AlUla Electric Car Rally 2021
+Ensured smooth traffic and secured operations during the regionâ€™s first electric car rally event in AlUla.
+
+Noor Riyadh 2022
+Managed traffic and security across multiple locations for Noor Riyadh, a large-scale light and art festival in the city.
+
+Newcastle United Team Visit
+Provided dedicated security management during the visit of the Newcastle United football team to Saudi Arabia.
+
+Launching Ceremony of Ceer Electric Car
+Managed traffic and ensured security during the launch event of the new Ceer electric vehicle brand.
+
+MIDDLE BEAST Festival
+Oversaw crowd control and ensured attendee safety at one of the regionâ€™s largest music festivals.
+
+Imagination Park
+Delivered full traffic and security services for this innovative and creative entertainment park.
+
+Formula One
+Handled traffic and security for the Formula One race, guaranteeing a world-class experience for participants and spectators.
+
+Flower Festival - Yanbu Industrial City
+Provided smooth traffic flow and security management for the popular Yanbu Flower Festival, a major horticultural event.
+
+Al Habib Industrial Hill Festival
+Managed safe access and movement for all attendees of this large-scale festival through traffic and security services.
+[4/20, 5:28 AM] عبدالحكيم الشنقيطي: 
+
+
+موسم الدرعية 2019 – المنطقة 2
+تقديم خدمات إدارة المرور والأمن للمنطقة 2 من موسم الدرعية، وهو حدث مرموق يشمل فعاليات رياضية وثقافية وترفيهية دولية.
+
+موسم حائل 2020
+إدارة حركة المرور والأمن لموسم حائل، وهو مهرجان ثقافي شهير بأنشطته الخارجية وجمهوره الكبير.
+
+رالي العلا للسيارات الكهربائية 2021
+ضمان انسيابية المرور وتأمين العمليات خلال أول رالي للسيارات الكهربائية في المنطقة بمدينة العلا.
+
+نور الرياض 2022
+إدارة حركة المرور والأمن في عدة مواقع لمهرجان نور الرياض، وهو مهرجان ضخم للفن والضوء في المدينة.
+
+زيارة فريق نيوكاسل يونايتد
+توفير خدمات أمنية مخصصة خلال زيارة فريق نيوكاسل يونايتد لكرة القدم للمملكة العربية السعودية.
+
+حفل إطلاق سيارة سير الكهربائية
+إدارة المرور وضمان الأمن خلال حفل إطلاق العلامة الجديدة للسيارات الكهربائية سير.
+
+مهرجان ميدل بيست
+الإشراف على التحكم في الحشود وضمان سلامة الحضور في أحد أكبر المهرجانات الموسيقية في المنطقة.
+
+حديقة الخيال
+تقديم خدمات متكاملة لإدارة المرور والأمن لهذا المشروع الترفيهي الإبداعي.
+
+سباق الفورمولا 1
+إدارة المرور والأمن لسباق الفورمولا 1، وضمان تجربة عالمية المستوى للمشاركين والجماهير.
+
+مهرجان الزهور - ينبع الصناعية
+ضمان انسيابية المرور وإدارة الأمن لمهرجان الزهور في ينبع، أحد أكبر الفعاليات البستانية في المنطقة.
+
+مهرجان تل الحبيب الصناعي
+إدارة الوصول الآمن وحركة المشاركين والزوار لهذا المهرجان الكبير من خلال خدمات المرور والأمن.

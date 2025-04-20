@@ -1,7 +1,7 @@
 ---
 name: "نواف"
 headshot: "../../assets/photo/image5.jpg"
-jobTitle: "مدير مبيعات"
+jobTitle: ""
 publish: true
 order: 2
 linkedin: "https://www.linkedin.com/in/apollo/"

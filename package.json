@@ -12,7 +12,8 @@
     },
     "dependencies": {
         "@thednp/color-picker": "^2.0.3",
-        "aos": "^2.3.4"
+        "aos": "^2.3.4",
+        "photoswipe": "^5.4.4"
     },
     "devDependencies": {
         "@astrojs/check": "^0.9.4",

@@ -1,5 +1,6 @@
 ---
 // Astro script block
+import Logo from '@components/Logo.astro';
 import Button from '@components/ui/Button.astro';
 import { Image } from 'astro:assets';
 
@@ -26,14 +27,15 @@ const opacity = content.overlayOpacity ?? 1;
 
 <section class="header-offset relative" style="background-color: var(--color-background); color: var(--color-body-base)">
   <div class="site-container mx-auto px-4 py-small relative z-10 flex flex-col md:items-center md:justify-center md:text-center">
-    
-    <h1 
-      class="text-4xl sm:text-5xl font-bold " 
-      style="color: var(--color-body-base)" 
-      data-aos="fade-up"
-    >
-      {content.title}
-    </h1>
+   <span class="place-self-center"> <Logo Height="100px" Width="100px"/> </span>
+   <h1 
+   class="text-4xl sm:text-5xl font-bold leading-snug" 
+   style="color: var(--color-body-base)" 
+   data-aos="fade-up"
+ >
+   {content.title}
+ </h1>
+ 
 
     <p 
       class="mt-8 max-w-3xl text-xl text-balance"

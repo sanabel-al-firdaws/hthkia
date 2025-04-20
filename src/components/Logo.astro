@@ -3,9 +3,11 @@ import { Image } from 'astro:assets';
 import logo from '../assets/logo.svg';
 interface Props {
     variant?: 'header' | 'footer' | 'dark';
+    Height: String;
+    Width: String;
 }
 
-const { variant = 'header' } = Astro.props;
+const { variant = 'header',Width,Height } = Astro.props;
 
 // Determine the appropriate CSS class based on the variant
 const getLogoClass = () => {
@@ -29,7 +31,7 @@ const getLogoClass = () => {
     getLogoClass()
   ]}
 > 
-  <Image src={logo} alt="SmartCrowds" height={50} width={50} />
+  <Image src={logo} alt="SmartCrowds" height={Height} width={Width} />
 
 </a>
 

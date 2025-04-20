@@ -15,7 +15,7 @@ interface Props {
 const { content } = Astro.props;
 const opacity = content.overlayOpacity ?? 1;
 ---
-<section class="w-full  pt-38 pb-18 relative bg-[--color-background-muted] text-[--color-headline]">
+<section class="w-full pt-34 pb-16 relative bg-[--color-background-light] text-[--color-headline]">
   <div class="absolute inset-0 w-full h-full overflow-hidden">
     {content.backgroundImage && (
       <Image
@@ -29,7 +29,7 @@ const opacity = content.overlayOpacity ?? 1;
       />
     )}
     <div 
-      class="absolute inset-0 w-full h-full bg-[--color-overlay]/70 mix-blend-multiply"
+      class="absolute inset-0 w-full h-full bg-[--color-background-dark]/60 mix-blend-multiply"
       style={`opacity: ${opacity};`}
     />
   </div>
@@ -37,14 +37,14 @@ const opacity = content.overlayOpacity ?? 1;
   <div class="site-container mx-auto px-4 relative z-10">
     <div class="max-w-3xl">
       <h1 
-        class="text-4xl sm:text-5xl font-bold text-[--color-subtle] "
+        class="text-4xl sm:text-5xl font-bold text-[--color-headline-dark]"
         data-aos="fade-up"
       >
         {content.title}
       </h1>
       {content.description && (
         <p 
-          class="mt-4 text-xl text-[--color-muted] leading-relaxed"
+          class="mt-4 text-lg sm:text-xl text-[--color-body-dark] leading-relaxed"
           data-aos="fade-up"
           data-aos-delay="100"
         >
@@ -53,6 +53,7 @@ const opacity = content.overlayOpacity ?? 1;
       )}
     </div>
   </div>
-</section>
+</section> 
+
 
   

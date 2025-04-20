@@ -1,7 +1,7 @@
 ---
 name: "محمد"
 headshot: "../../assets/photo/image.jpg"
-jobTitle: "رائد أعمال"
+jobTitle: ""
 publish: true
 order: 2
 linkedin: "https://www.linkedin.com/in/apollo/"

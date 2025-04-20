@@ -4,11 +4,23 @@ import { getPaddingClass } from '@utils/styleUtils';
 import type { PaddingSize } from '@utils/styleUtils';
 import { Image } from 'astro:assets';
 
-interface Props { 
+interface Props {
     padding?: PaddingSize;
     paddingTop?: PaddingSize;
     paddingBottom?: PaddingSize;
 }
+import image from '../../assets/team/image.jpg';
+import image1 from '../../assets/team/image1.jpg';
+import image2 from '../../assets/team/image2.jpg';
+import image3 from '../../assets/team/image3.jpg';
+import image4 from '../../assets/team/image4.jpg';
+import image5 from '../../assets/team/image5.jpg';
+import image6 from '../../assets/team/image6.jpg';
+import image7 from '../../assets/team/image7.jpg';
+import image8 from '../../assets/team/image8.jpg';
+import image9 from '../../assets/team/image9.jpg';
+
+const images = [image, image1, image2, image3, image4, image5, image6, image7, image8, image9];
 
 const { padding, paddingTop, paddingBottom } = Astro.props;
 const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
@@ -20,57 +32,63 @@ const teamMembers = await getCollection('team', ({ data }) => {
 // Sort team members by order
 const sortedTeamMembers = teamMembers.sort((a, b) => a.data.order - b.data.order);
 ---
+
 <section class="relative py-12" style="background-color: var(--color-background);">
-  <div class="site-container mx-auto px-4">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-      {sortedTeamMembers.map((member, index) => (
-        <div
-          class="group relative flex flex-col rounded-2xl overflow-hidden transition-shadow duration-300 border shadow-sm"
-          data-aos="fade-up"
-          data-aos-delay={index * 100}
-          data-aos-duration="800"
-          style="background-color: var(--color-background); color: var(--color-body-base); border-color: var(--color-secondary-light)"
-        >
-          <a href={`/team/${member.id}`} class="flex flex-col">
-            <div class="relative overflow-hidden">
-              <span 
-                class="absolute inset-0 -mt-12 w-1/2 translate-x-[250%] rotate-12 opacity-30 group-hover:translate-x-[-250%] transition-all duration-700 ease-out z-10 pointer-events-none"
-                style="background-color: var(--color-background-light)"
-              />
+    <div class="site-container mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+            {
+                sortedTeamMembers.map((member, index) => (
+                    <div
+                        class="group relative flex flex-col rounded-2xl overflow-hidden transition-shadow duration-300 border shadow-sm"
+                        data-aos="fade-up"
+                        data-aos-delay={index * 100}
+                        data-aos-duration="800"
+                        style="background-color: var(--color-background); color: var(--color-body-base); border-color: var(--color-secondary-light)"
+                    >
+                        <a href={`/team/${member.id}`} class="flex flex-col">
+                            <div class="relative overflow-hidden">
+                                <span
+                                    class="absolute inset-0 -mt-12 w-1/2 translate-x-[250%] rotate-12 opacity-30 group-hover:translate-x-[-250%] transition-all duration-700 ease-out z-10 pointer-events-none"
+                                    style="background-color: var(--color-background-light)"
+                                />
 
-              {member.data.headshot ? (
-                <Image
-                  src={member.data.headshot}
-                  alt={member.data.name}
-                  width={896}
-                  height={1280}
-                  quality={80}
-                  format="webp"
-                  class="w-full aspect-[3/4] object-cover group-hover:scale-105 group-hover:brightness-[1.2] transition-transform duration-500 ease-in-out"
-                  loading="eager"
-                  decoding="async"
-                />
-              ) : (
-                <div class="w-full aspect-[3/4] bg-gray-200 flex items-center justify-center text-gray-500 text-sm">
-                  No Image
-                </div>
-              )}
-            </div>
+                                {member.data.headshot ? (
+                                    <Image
+                                        src={member.data.headshot}
+                                        alt={member.data.name}
+                                        width={896}
+                                        height={1280}
+                                        quality={80}
+                                        format="webp"
+                                        class="w-full aspect-[3/4] object-cover group-hover:scale-105 group-hover:brightness-[1.2] transition-transform duration-500 ease-in-out"
+                                        loading="eager"
+                                        decoding="async"
+                                    />
+                                ) : (
+                                    <div class="w-full aspect-[3/4] bg-gray-200 flex items-center justify-center text-gray-500 text-sm">
+                                        No Image
+                                    </div>
+                                )}
+                            </div>
 
-            <div class="p-4">
-              <h3 class="text-lg font-semibold transition-colors duration-300 group-hover:text-[--color-secondary-dark] text-[--color-body-base]">
-                {member.data.name}
-              </h3>
-              <p class="text-sm mt-1 text-[--color-body-light]">{member.data.jobTitle}</p>
-            </div>
-          </a>
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold transition-colors duration-300 group-hover:text-[--color-secondary-dark] text-[--color-body-base]">
+                                    {member.data.name}
+                                </h3>
+                                <p class="text-sm mt-1 text-[--color-body-light]">{member.data.jobTitle}</p>
+                            </div>
+                        </a>
+                    </div>
+                ))
+            }
         </div>
-      ))}
     </div>
-  </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {
+            images.map((src) => (
+                <Image src={src} alt="" class="rounded-lg shadow-md hover:scale-105 transition-transform duration-200" />
+            ))
+        }
+    </div>
 </section>
-
-
-
-  
-  

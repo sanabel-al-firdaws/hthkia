@@ -72,12 +72,15 @@ const currentYear = new Date().getFullYear();
       class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12" 
       style="border-bottom: 1px solid var(--color-secondary-light);"
     >
-      <div class="col-span-1">
-        <Logo variant="footer" />
-        <p class="mt-4 text-sm leading-relaxed" style="color: var(--color-body-base);">
-          تمتع بتجربة استضافة أحداث أكثر سلامة وتنظيما
-        </p>
-      </div>
+    <div class="col-span-1 text-right">
+      <span class="place-self-end block"> 
+        <Logo Height="50px" Width="50px"/> 
+      </span>
+      <p class="mt-4 text-sm leading-relaxed" style="color: var(--color-body-base);">
+        تمتع بتجربة استضافة حشود أكثر سلامة وتنظيما
+      </p>
+    </div>
+    
 
       <div class="col-span-1">
         <h3 class="text-lg font-semibold mb-4" style="color: var(--color-headline);">روابط مهمة</h3>
@@ -103,7 +106,7 @@ const currentYear = new Date().getFullYear();
 
     <div class="mt-10 flex flex-col md:flex-row justify-between items-center text-sm" style="color: var(--color-body-base);">
       <div>
-        © {currentYear} <span class="font-medium" style="color: var(--color-headline);">{siteConfig.companyName}</span>. All rights reserved.
+        © {currentYear} All rights reserved <span class="font-medium" style="color: var(--color-headline);">{siteConfig.companyName}</span> 
       </div>
 
       <nav class="mt-4 md:mt-0">

@@ -1,14 +1,15 @@
 export const siteConfig = {
   companyName: 'SmartCrowds',
-  siteUrl: 'https://titan-core.com',
+  siteUrl: 'https://hthkia.com',
   Socials: {
-      xSocial: 'https://x.com/astrodotbuild',
-      Github: 'https://github.com/withastro',
-      Instagram: 'https://www.instagram.com/astrodotbuild',
-      LinkedIn: 'https://www.linkedin.com/company/astrodotbuild',
-      Email: 'support@titan-core.com',
-      Phone: '+123 456 7890',
-      Location: '123 Main St, Anytown, USA',
+      // xSocial: 'https://x.com/astrodotbuild',
+      // Github: 'https://github.com/withastro',
+      // Instagram: 'https://www.instagram.com/astrodotbuild',
+      // LinkedIn: 'https://www.linkedin.com/company/astrodotbuild',
+      Email: 'info@hshoud.com',
+      Phone: '0594117857',
+      Phone2:'0502449948',
+      Location: 'مكة المكرمة , الرصيفة - الدائري الثالث - برج الشريف يحيى',
   }
 };
 
@@ -19,7 +20,7 @@ export const SEO = {
 };
   
 export const blogSetting = {
-  postsPerPage: 10  
+  postsPerPage: 11  
 }
 
 export const themeSetting = {

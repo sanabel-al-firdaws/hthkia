@@ -4,9 +4,10 @@ export interface Props {
   subtitle: string;
   image: any;
   alt?: string;
+  link?: string;
 }
 
-const { title, subtitle, image, alt = `${title} Project` } = Astro.props;
+const { title, subtitle, image, link ,alt = `${title} Project` } = Astro.props;
 import {Image} from 'astro:assets';
 ---
 <!-- color 1 : #E2E0DF  color 2 #D0C2A9 coloe 3 #5C331C color 4 #32160B -->
@@ -33,6 +34,7 @@ import {Image} from 'astro:assets';
     ></span>
 
     <!-- Image -->
+    <a href={link}>
     <Image
       src={image}
       alt={alt}
@@ -44,7 +46,7 @@ import {Image} from 'astro:assets';
       loading="eager"
       decoding="async"
     />
-
+ 
     <!-- Card Content -->
     <div class="p-5 sm:p-6 bg-[--color-background] relative z-20">
       <h3 
@@ -56,5 +58,6 @@ import {Image} from 'astro:assets';
         {subtitle}
       </p>
     </div>
+  </a>
 
 </div>

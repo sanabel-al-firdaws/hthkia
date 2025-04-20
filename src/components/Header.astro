@@ -26,7 +26,8 @@ const isCurrentPage = (link: string) => {
       class="flex justify-between items-center py-4 rounded-lg px-4 border shadow-md"
       style="background-color: var(--color-background); border-color: var(--color-secondary-light)"
     >
-      <Logo />
+
+      <Logo Height="50px" Width="50px" />
 
       <nav class="relative flex items-center gap-2 lg:gap-8" aria-label="Site Navigation">
         {/* Desktop Menu */}
@@ -37,7 +38,7 @@ const isCurrentPage = (link: string) => {
                 <Button
                   href={item.link}
                   variant="secondary"
-                  size="sm"
+                  size="lg"
                   class={`rounded-md px-2 py-1 ${
                     isCurrentPage(item.link)
                       ? 'font-semibold text-[--color-headline]'
@@ -66,7 +67,7 @@ const isCurrentPage = (link: string) => {
                       <Button
                         href={child.link}
                         variant="secondary"
-                        size="sm"
+                        size="lg"
                         class={`w-full text-left block px-4 py-2 text-sm rounded-md ${
                           isCurrentPage(child.link)
                             ? 'font-semibold text-[--color-headline]'
@@ -85,7 +86,7 @@ const isCurrentPage = (link: string) => {
         </ul>
 
         {/* CTA Button */}
-        <Button href={ctaButton.link} variant="primary">
+        <Button href={ctaButton.link} size='lg' variant="primary">
           {ctaButton.name}
         </Button>
 
@@ -106,71 +107,73 @@ const isCurrentPage = (link: string) => {
 
         {/* Mobile Menu */}
         <div
-          class="mobile-menu fixed inset-0 z-20 px-8 pt-20 hidden opacity-0 scale-95 transform transition-all duration-200 ease-out overflow-y-auto"
-          style="background-color: var(--color-secondary-light); color: var(--color-body-base)"
-        >
-          <ul class="flex flex-col gap-4">
-            {headerMenu.map((item) => (
-              <li>
-                <div>
-                  <div class="flex items-center justify-between">
-                    <Button
-                      href={item.link}
-                      variant="secondary"
-                      size="sm"
-                      class={`py-1 rounded-md ${
-                        isCurrentPage(item.link)
-                          ? 'text-[--color-headline] font-semibold'
-                          : 'text-[--color-body-base] hover:text-[--color-headline]'
-                      }`}
-                      aria-current={isCurrentPage(item.link) ? 'page' : undefined}
-                    >
-                      {item.name}
-                    </Button>
-                    {item.children && (
-                      <button
-                        class="mobile-submenu-button p-2 -mr-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[--color-headline]"
-                        aria-label={`Toggle ${item.name} submenu`}
-                        aria-expanded="false"
-                      >
-                        <ChevronDown size={16} class="transform transition-transform duration-200" />
-                      </button>
-                    )}
-                  </div>
-
+        class="mobile-menu fixed inset-0 z-20 px-8 pt-20 hidden opacity-0 scale-95 transform transition-all duration-200 ease-out overflow-y-auto flex flex-col items-center text-center"
+        style="background-color: var(--color-primary-dark); color: var(--color-body-base)"
+      >
+        <ul class="flex flex-col gap-6 w-full max-w-md">
+          {headerMenu.map((item) => (
+            <li key={item.name}>
+              <div class="flex flex-col items-center">
+                <div class="flex items-center justify-between w-full">
+                  <Button
+                    href={item.link}
+                    variant="primary"
+                    size="lg"
+                    class={`w-full py-3 rounded-lg text-base ${
+                      isCurrentPage(item.link)
+                        ? 'text-[--color-headline] font-semibold'
+                        : 'text-[--color-body-base] hover:text-[--color-headline]'
+                    }`}
+                    aria-current={isCurrentPage(item.link) ? 'page' : undefined}
+                  >
+                    {item.name}
+                  </Button>
+      
                   {item.children && (
-                    <ul class="mobile-submenu ml-4 mt-2 space-y-2 hidden">
-                      {item.children.map((child) => (
-                        <li>
-                          <Button
-                            href={child.link}
-                            variant="secondary"
-                            size="sm"
-                            class={`block py-1 rounded-md text-sm w-full text-left ${
-                              isCurrentPage(child.link)
-                                ? 'text-[--color-headline] font-semibold'
-                                : 'text-[--color-body-base] hover:text-[--color-headline]'
-                            }`}
-                            aria-current={isCurrentPage(child.link) ? 'page' : undefined}
-                          >
-                            {child.name}
-                          </Button>
-                        </li>
-                      ))}
-                    </ul>
+                    <button
+                      class="mobile-submenu-button ml-2 p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-[--color-headline]"
+                      aria-label={`Toggle ${item.name} submenu`}
+                      aria-expanded="false"
+                    >
+                      <ChevronDown size={20} class="transform transition-transform duration-200" />
+                    </button>
                   )}
                 </div>
-              </li>
-            ))}
-          </ul>
-
-          {/* Mobile CTA */}
-          <div class="mt-8 pb-8">
-            <Button href={ctaButton.link} variant="secondary">
-              {ctaButton.name}
-            </Button>
-          </div>
+      
+                {item.children && (
+                  <ul class="mobile-submenu mt-3 space-y-2 w-full hidden">
+                    {item.children.map((child) => (
+                      <li key={child.name}>
+                        <Button
+                          href={child.link}
+                          variant="secondary"
+                          size="sm"
+                          class={`block w-full py-2 px-4 rounded-md text-sm text-left ${
+                            isCurrentPage(child.link)
+                              ? 'text-[--color-headline] font-semibold'
+                              : 'text-[--color-body-base] hover:text-[--color-headline]'
+                          }`}
+                          aria-current={isCurrentPage(child.link) ? 'page' : undefined}
+                        >
+                          {child.name}
+                        </Button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      
+        {/* Mobile CTA */}
+        <div class="mt-12 pb-10 w-full flex justify-center">
+          <Button href={ctaButton.link} variant="secondary" size="lg" class="px-6 py-3 rounded-full text-base">
+            {ctaButton.name}
+          </Button>
         </div>
+      </div>
+      
       </nav>
     </div>
   </div>

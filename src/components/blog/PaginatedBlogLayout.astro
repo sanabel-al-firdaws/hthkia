@@ -7,8 +7,8 @@ import { ChevronLeft, ChevronRight } from 'lucide-astro';
 
 import blogHeroImage from '@assets/images/blog-hero-2.jpg';
 
-const seoTitle = "Blog";
-const seoDescription = "Our blog is where we share our thoughts and ideas about the latest trends in the web development industry.";
+const seoTitle = "المدونة";
+const seoDescription = "مدونتنا هي للمهتمين بآخر المشاريع التي قمنا بها";
 
 interface Props {
     posts: any[];
@@ -41,9 +41,9 @@ const prevPage = currentPage > 1
 const heroContent = {
     title: title,
     description: subtitle,
-    backgroundImage: blogHeroImage,
-    overlayOpacity: 0.2
-}
+    // backgroundImage: blogHeroImage,
+    // overlayOpacity: 0.2
+} 
 ---
 <Layout title={seoTitle} description={seoDescription}>
     <main>
@@ -56,8 +56,7 @@ const heroContent = {
                 <div class="flex items-center justify-center gap-6">
                     {prevPage && (
                         <Button href={prevPage} variant="primary" class="flex items-center gap-2">
-                            <ChevronLeft size={20} />
-                            Previous
+                            <ChevronRight size={20} />
                         </Button>
                     )}
                     
@@ -79,8 +78,8 @@ const heroContent = {
 
                     {nextPage && (
                         <Button href={nextPage} variant="primary">
-                            Next
-                            <ChevronRight size={20} />
+                 
+                            <ChevronLeft size={20} />
                         </Button>
                     )}
                 </div>
