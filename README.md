@@ -84,7 +84,7 @@ export const themeSetting = {
 ### Available Themes:
 
 1. `zeus` - Sky & Thunder theme
-2. `poseidon` - Ocean & Seas theme
+2. `main` - Ocean & Seas theme
 3. `hades` - Underworld theme
 4. `apollo` - Sun & Light theme
 5. `artemis` - Moon & Hunt theme

@@ -1,0 +1,27 @@
+[data-theme="main"] {
+    --color-primary: #583300;
+    --color-primary-light: #fffbf7;
+    --color-primary-dark: #4f3300;
+    --color-secondary: #583300;
+    --color-secondary-light: #ebebeb;
+    --color-secondary-dark: #016e8f;
+    --color-accent: #333611;
+    --color-background: #ffffff;
+    --color-headline: #5c5c5c;
+    --color-body-base: #333333;
+
+    /* Derived variables */
+    --color-input: var(--color-background-light);
+    --color-input-light: var(--color-background-light);
+    --color-input-dark: var(--color-background-dark);
+    --color-input-text: var(--color-body-base);
+    --color-input-text-light: var(--color-headline-light);
+    --color-input-text-dark: var(--color-headline-dark);
+    --color-nav-text: var(--color-body-base);
+    --color-nav-text-hover: var(--color-primary);
+    --color-nav-text-active: var(--color-primary);
+    --color-nav-text-current: var(--color-primary);
+    --color-nav-submenu-bg: var(--color-background-light);
+    --color-header-logo: var(--color-primary);
+    --color-footer-logo: var(--color-primary);
+}

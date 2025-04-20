@@ -42,7 +42,7 @@ const paddingClass = getPaddingClass({
     paddingBottom: Astro.props.paddingBottom 
 });
 ---
-<section class:list={["relative", "bg-[#E8E8E0]", "py-20"]}>
+<section class:list={["relative", "py-20"]} style="background-color: var(--color-background-light);">
   <div class="site-container px-4">
     {(title || description) && (
       <div class="text-center mb-16 max-w-3xl mx-auto">
@@ -53,12 +53,12 @@ const paddingClass = getPaddingClass({
           />
         )}
         {title && (
-          <h2 class="text-[#666666] text-3xl font-bold" data-aos="fade-up">
+          <h2 class="text-3xl font-bold" style="color: var(--color-headline);" data-aos="fade-up">
             {title}
           </h2>
         )}
         {description && (
-          <p class="mt-4 text-[#666666]" data-aos="fade-up" data-aos-delay="100">
+          <p class="mt-4" style="color: var(--color-body-base);" data-aos="fade-up" data-aos-delay="100">
             {description}
           </p>
         )}
@@ -78,17 +78,31 @@ const paddingClass = getPaddingClass({
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-auto-fit gap-8 auto-rows-fr">
       {features.map((feature, index) => (
         <div 
-          class="p-6 rounded-lg border border-[#BFA67D]/60 bg-[#666666] flex flex-col hover:border-[#BFA67D] transition-colors duration-300 shadow-sm hover:shadow-[0_10px_35px_rgba(191,166,125,0.4)]"
+          class="p-6 rounded-2xl flex flex-col shadow-md hover:shadow-xl transition-shadow duration-300 relative group overflow-hidden"
+          style="
+            background-color: var(--color-background);
+            border: 1px solid var(--color-secondary-light);
+            color: var(--color-body-dark);
+          "
           data-aos="fade-up"
           data-aos-delay={index * 100}
         >
-          <div class="w-12 h-12 flex items-center justify-center rounded-lg mb-4 bg-[#BFA67D]">
-            <feature.icon size={24} class="text-black" />
+          {/* Shine effect */}
+          <span 
+            class="absolute inset-0 -mt-12 w-1/2 translate-x-[250%] rotate-12 opacity-10 group-hover:translate-x-[-250%] transition-transform duration-1000 ease-out z-0 pointer-events-none"
+            style="background-color: var(--color-primary-light);"
+          ></span>
+
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl mb-4 z-10 relative" style="background-color: var(--color-secondary);">
+            <feature.icon size={24} class="text-[--color-background]" />
           </div>
-          <h3 class="text-xl text-[#F3F1EF] font-semibold mb-2 transition-colors duration-300">
+          <h3 
+            class="text-xl font-semibold mb-2 relative z-10 transition-colors duration-300 group-hover:text-[--color-primary]"
+            style="color: var(--color-headline);"
+          >
             {feature.title}
           </h3>
-          <p class="text-[#F3F1EF] opacity-85">
+          <p class="relative z-10" style="color: var(--color-body-light); opacity: 0.85;">
             {feature.description}
           </p>
         </div>
@@ -97,10 +111,10 @@ const paddingClass = getPaddingClass({
   </div>
 </section>
 
-
 <style>
   .grid-cols-auto-fit {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 </style>
+
 

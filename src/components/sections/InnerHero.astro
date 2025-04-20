@@ -15,44 +15,44 @@ interface Props {
 const { content } = Astro.props;
 const opacity = content.overlayOpacity ?? 1;
 ---
-
-<section class="w-full border-b border-[#CBB898]/20 pt-38 pb-18 relative bg-[#EAE7E3] text-[#2F1E13]">
-    <div class="absolute inset-0 w-full h-full overflow-hidden">
-      {content.backgroundImage && (
-        <Image
-          src={content.backgroundImage}
-          alt=""
-          width={1920}
-          height={1080}
-          class="w-full h-full object-cover brightness-90"
-          quality={70}
-          format="webp"
-        />
-      )}
-      <div 
-        class="absolute inset-0 w-full h-full bg-[#E4DFD9]/70 mix-blend-multiply" 
-        style={`opacity: ${opacity};`} 
+<section class="w-full  pt-38 pb-18 relative bg-[--color-background-muted] text-[--color-headline]">
+  <div class="absolute inset-0 w-full h-full overflow-hidden">
+    {content.backgroundImage && (
+      <Image
+        src={content.backgroundImage}
+        alt=""
+        width={1920}
+        height={1080}
+        class="w-full h-full object-cover brightness-90"
+        quality={70}
+        format="webp"
       />
-    </div>
-  
-    <div class="site-container mx-auto px-4 relative z-10">
-      <div class="max-w-3xl">
-        <h1 
-          class="text-4xl sm:text-5xl font-bold text-[#666666] drop-shadow-lg" 
+    )}
+    <div 
+      class="absolute inset-0 w-full h-full bg-[--color-overlay]/70 mix-blend-multiply"
+      style={`opacity: ${opacity};`}
+    />
+  </div>
+
+  <div class="site-container mx-auto px-4 relative z-10">
+    <div class="max-w-3xl">
+      <h1 
+        class="text-4xl sm:text-5xl font-bold text-[--color-subtle] "
+        data-aos="fade-up"
+      >
+        {content.title}
+      </h1>
+      {content.description && (
+        <p 
+          class="mt-4 text-xl text-[--color-muted] leading-relaxed"
           data-aos="fade-up"
+          data-aos-delay="100"
         >
-          {content.title}
-        </h1>
-        {content.description && (
-          <p 
-            class="mt-4 text-xl text-[#7C6D63] leading-relaxed" 
-            data-aos="fade-up" 
-            data-aos-delay="100"
-          >
-            {content.description}
-          </p>
-        )}
-      </div>
+          {content.description}
+        </p>
+      )}
     </div>
-  </section>
+  </div>
+</section>
+
   

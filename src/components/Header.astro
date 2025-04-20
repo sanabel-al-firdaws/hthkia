@@ -21,144 +21,161 @@ const isCurrentPage = (link: string) => {
 };
 ---
 <header class="fixed top-0 z-50 w-full left-0">
-    <div class="site-container mx-auto px-4 mt-4">
-      <div class="flex justify-between items-center bg-[#E8E8E0] py-4 rounded-lg px-4 border border-[#BFA67D]/70 shadow-md">
-        <Logo />
-        <nav class="relative flex items-center gap-2 lg:gap-8" aria-label="Site Navigation">
-          
-          <!-- Desktop Menu -->
-          <ul class="hidden lg:flex lg:gap-8 items-center">
-            {headerMenu.map((item, index) => (
-              <li class="relative group">
-                <div class="flex items-center gap-1">
-                  <a
-                    href={item.link}
-                    class:list={[
-                      'text-sm font-medium rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-[#BFA67D]',
-                      isCurrentPage(item.link)
-                        ? 'text-[#472816] font-semibold'
-                        : 'text-[#6B5B55] hover:text-[#472816]',
-                    ]}
-                    aria-current={isCurrentPage(item.link) ? 'page' : undefined}
-                  >
-                    {item.name}
-                    {item.children && item.showArrow && (
-                      <ChevronDown size={16} class="transform transition-transform inline-block ml-1" />
+  <div class="site-container mx-auto px-4 mt-4">
+    <div
+      class="flex justify-between items-center py-4 rounded-lg px-4 border shadow-md"
+      style="background-color: var(--color-background); border-color: var(--color-secondary-light)"
+    >
+      <Logo />
+
+      <nav class="relative flex items-center gap-2 lg:gap-8" aria-label="Site Navigation">
+        {/* Desktop Menu */}
+        <ul class="hidden lg:flex lg:gap-4 items-center">
+          {headerMenu.map((item, index) => (
+            <li class="relative group">
+              <div class="flex items-center gap-1">
+                <Button
+                  href={item.link}
+                  variant="secondary"
+                  size="sm"
+                  class={`rounded-md px-2 py-1 ${
+                    isCurrentPage(item.link)
+                      ? 'font-semibold text-[--color-headline]'
+                      : 'text-[--color-body-base] hover:text-[--color-headline]'
+                  }`}
+                  aria-current={isCurrentPage(item.link) ? 'page' : undefined}
+                >
+                  {item.name}
+                  {item.children && item.showArrow && (
+                    <ChevronDown size={16} class="ml-1 transform transition-transform inline-block" />
+                  )}
+                </Button>
+              </div>
+
+              {/* Dropdown */}
+              {item.children && (
+                <ul
+                  class:list={[
+                    'submenu absolute mt-2 rounded-md min-w-[200px] shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity duration-200 z-50 border',
+                    index === headerMenu.length - 1 ? 'right-0' : 'left-0',
+                  ]}
+                  style="background-color: var(--color-background-light); border-color: var(--color-secondary-light)"
+                >
+                  {item.children.map((child) => (
+                    <li>
+                      <Button
+                        href={child.link}
+                        variant="secondary"
+                        size="sm"
+                        class={`w-full text-left block px-4 py-2 text-sm rounded-md ${
+                          isCurrentPage(child.link)
+                            ? 'font-semibold text-[--color-headline]'
+                            : 'text-[--color-body-base] hover:text-[--color-headline]'
+                        }`}
+                        aria-current={isCurrentPage(child.link) ? 'page' : undefined}
+                      >
+                        {child.name}
+                      </Button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+
+        {/* CTA Button */}
+        <Button href={ctaButton.link} variant="primary">
+          {ctaButton.name}
+        </Button>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          class="mobile-menu-button relative z-30 p-2 border-none cursor-pointer lg:hidden"
+          aria-label="Toggle Menu"
+          aria-expanded="false"
+          style="background-color: var(--color-background)"
+        >
+          <span class="menu-icon block">
+            <Menu size={24} class="text-[--color-body-base]" />
+          </span>
+          <span class="close-icon hidden">
+            <X size={24} class="text-[--color-body-base]" />
+          </span>
+        </button>
+
+        {/* Mobile Menu */}
+        <div
+          class="mobile-menu fixed inset-0 z-20 px-8 pt-20 hidden opacity-0 scale-95 transform transition-all duration-200 ease-out overflow-y-auto"
+          style="background-color: var(--color-secondary-light); color: var(--color-body-base)"
+        >
+          <ul class="flex flex-col gap-4">
+            {headerMenu.map((item) => (
+              <li>
+                <div>
+                  <div class="flex items-center justify-between">
+                    <Button
+                      href={item.link}
+                      variant="secondary"
+                      size="sm"
+                      class={`py-1 rounded-md ${
+                        isCurrentPage(item.link)
+                          ? 'text-[--color-headline] font-semibold'
+                          : 'text-[--color-body-base] hover:text-[--color-headline]'
+                      }`}
+                      aria-current={isCurrentPage(item.link) ? 'page' : undefined}
+                    >
+                      {item.name}
+                    </Button>
+                    {item.children && (
+                      <button
+                        class="mobile-submenu-button p-2 -mr-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[--color-headline]"
+                        aria-label={`Toggle ${item.name} submenu`}
+                        aria-expanded="false"
+                      >
+                        <ChevronDown size={16} class="transform transition-transform duration-200" />
+                      </button>
                     )}
-                  </a>
+                  </div>
+
+                  {item.children && (
+                    <ul class="mobile-submenu ml-4 mt-2 space-y-2 hidden">
+                      {item.children.map((child) => (
+                        <li>
+                          <Button
+                            href={child.link}
+                            variant="secondary"
+                            size="sm"
+                            class={`block py-1 rounded-md text-sm w-full text-left ${
+                              isCurrentPage(child.link)
+                                ? 'text-[--color-headline] font-semibold'
+                                : 'text-[--color-body-base] hover:text-[--color-headline]'
+                            }`}
+                            aria-current={isCurrentPage(child.link) ? 'page' : undefined}
+                          >
+                            {child.name}
+                          </Button>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
-  
-                <!-- Dropdown Menu -->
-                {item.children && (
-                  <ul
-                    class:list={[
-                      'submenu absolute mt-2 bg-[#F6F3F0] border border-[#BFA67D]/60 rounded-md min-w-[200px] shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity duration-200 z-50',
-                      index === headerMenu.length - 1 ? 'right-0' : 'left-0',
-                    ]}
-                  >
-                    {item.children.map((child) => (
-                      <li>
-                        <a
-                          href={child.link}
-                          class:list={[
-                            'block px-4 py-2 text-sm text-[#6F615C] hover:text-[#472816] focus:outline-none focus:ring-2 focus:ring-[#BFA67D]',
-                            isCurrentPage(child.link) && 'font-semibold',
-                          ]}
-                          aria-current={isCurrentPage(child.link) ? 'page' : undefined}
-                        >
-                          {child.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
               </li>
             ))}
           </ul>
-  
-          <Button href={ctaButton.link} variant="primary">{ctaButton.name}</Button>
-  
-          <!-- Mobile Menu Button -->
-          <button
-            class="mobile-menu-button relative z-30 p-2 border-none cursor-pointer bg-transparent lg:hidden"
-            aria-label="Toggle Menu"
-            aria-expanded="false"
-          >
-            <span class="menu-icon block">
-              <Menu size={24} class="text-[#5C4B43]" />
-            </span>
-            <span class="close-icon hidden">
-              <X size={24} class="text-[#5C4B43]" />
-            </span>
-          </button>
-  
-          <!-- Mobile Menu Panel -->
-          <div class="mobile-menu fixed inset-0 z-20 px-8 pt-20 bg-[#D5C4AC] text-[#5C4B43] lg:hidden hidden opacity-0 scale-95 transform transition-all duration-200 ease-out overflow-y-auto">
-            <ul class="flex flex-col gap-4">
-              {headerMenu.map((item) => (
-                <li>
-                  <div>
-                    <div class="flex items-center justify-between">
-                      <a
-                        href={item.link}
-                        class:list={[
-                          'py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-[#472816]',
-                          isCurrentPage(item.link)
-                            ? 'text-[#472816] font-semibold'
-                            : 'text-[#5C4B43] hover:text-[#472816]',
-                        ]}
-                        aria-current={isCurrentPage(item.link) ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
-                      {item.children && (
-                        <button
-                          class:list={[
-                            'mobile-submenu-button p-2 -mr-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#472816]',
-                          ]}
-                          aria-label={`Toggle ${item.name} submenu`}
-                          aria-expanded="false"
-                        >
-                          <ChevronDown size={16} class="transform transition-transform duration-200" />
-                        </button>
-                      )}
-                    </div>
-  
-                    {item.children && (
-                      <ul class="mobile-submenu ml-4 mt-2 space-y-2 hidden">
-                        {item.children.map((child) => (
-                          <li>
-                            <a
-                              href={child.link}
-                              class:list={[
-                                'block py-1 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#472816]',
-                                isCurrentPage(child.link)
-                                  ? 'text-[#472816] font-semibold'
-                                  : 'text-[#5C4B43] hover:text-[#472816]',
-                              ]}
-                              aria-current={isCurrentPage(child.link) ? 'page' : undefined}
-                            >
-                              {child.name}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </li>
-              ))}
-            </ul>
-  
-            <!-- Mobile CTA -->
-            <div class="mt-8 pb-8">
-              <Button href={ctaButton.link} variant="ghostLight">{ctaButton.name}</Button>
-            </div>
+
+          {/* Mobile CTA */}
+          <div class="mt-8 pb-8">
+            <Button href={ctaButton.link} variant="secondary">
+              {ctaButton.name}
+            </Button>
           </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </div>
-  </header>
-  
+  </div>
+</header>
+
 <script>
     // Desktop Menu
     const desktopMenuItems = document.querySelectorAll('.group');

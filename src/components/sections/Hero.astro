@@ -1,39 +1,43 @@
 ---
+// Astro script block
 import Button from '@components/ui/Button.astro';
 import { Image } from 'astro:assets';
 
 interface HeroContent {
-    title: string;
-    description: string;
-        buttons?: {
-        text: string;
-        link: string;
-        variant?: 'primary' | 'secondary' | 'ghostLight' | 'ghostDark';
-        target?: string;
-    }[];
-    backgroundImage?: string | any; // Using any for now to handle both string paths and imported images
-    overlayOpacity?: number; // Value between 0 and 1
+  title: string;
+  description: string;
+  buttons?: {
+    text: string;
+    link: string;
+    variant?: 'primary' | 'secondary' | 'ghostLight' | 'ghostDark';
+    target?: string;
+  }[];
+  backgroundImage?: string | any;
+  overlayOpacity?: number;
 }
 
 interface Props {
-    content: HeroContent;
+  content: HeroContent;
 }
 
 const { content } = Astro.props;
-const opacity = content.overlayOpacity ?? 1; // Default opacity if not specified
+const opacity = content.overlayOpacity ?? 1;
 ---
-<section class="bg-[#E8E8E0] header-offset relative text-[#666666]">
+
+<section class="header-offset relative" style="background-color: var(--color-background); color: var(--color-body-base)">
   <div class="site-container mx-auto px-4 py-small relative z-10 flex flex-col md:items-center md:justify-center md:text-center">
     
     <h1 
-      class="text-4xl sm:text-5xl font-bold text-[#666666]  drop-shadow-lg" 
+      class="text-4xl sm:text-5xl font-bold " 
+      style="color: var(--color-body-base)" 
       data-aos="fade-up"
     >
       {content.title}
     </h1>
 
     <p 
-      class="mt-4 max-w-3xl text-xl text-[#AC9480] text-balance"
+      class="mt-8 max-w-3xl text-xl text-balance"
+      style="color: var(--color-accent)" 
       data-aos="fade-up"
       data-aos-delay="100"
     >
@@ -44,10 +48,12 @@ const opacity = content.overlayOpacity ?? 1; // Default opacity if not specified
       <div class="flex flex-wrap gap-4 mt-8 justify-center" data-aos="fade-up" data-aos-delay="200">
         {content.buttons.map((button) => (
           <Button
-            variant='primary'
+
+            variant="primary"
             href={button.link}
             target={button.target || '_self'}
-            class="hover:bg-[#CBB898] hover:text-[#3D2415] transition-colors duration-300"
+            class="transition-colors duration-300"
+
           >
             {button.text}
           </Button>
@@ -56,6 +62,3 @@ const opacity = content.overlayOpacity ?? 1; // Default opacity if not specified
     )}
   </div>
 </section>
-
-
-  

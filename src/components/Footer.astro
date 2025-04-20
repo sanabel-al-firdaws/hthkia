@@ -35,15 +35,24 @@ const defaultCta = {
 const cta = footerCta || defaultCta;
 const currentYear = new Date().getFullYear();
 ---
-<footer class={`bg-[#E8E8E0] text-[#666666] pt-${cta.hideCta ? 'large' : 'small'} pb-large`}>
+<footer class={`pt-${cta.hideCta ? 'large' : 'small'} pb-large`} style="background-color: var(--color-background); color: var(--color-body-base);">
   <div class="site-container mx-auto px-4">
     
     {!cta.hideCta && (
-      <div class="text-center border-b border-[#BFA67D]/40 mb-16 py-12">
-        <h2 class="text-4xl font-bold mb-4 text-[#3D2415]" data-aos="fade-up">
+      <div class="text-center mb-16 py-12" style="border-bottom: 1px solid var(--color-secondary-light);">
+        <h2 
+          class="text-4xl font-bold mb-4" 
+          style="color: var(--color-headline);" 
+          data-aos="fade-up"
+        >
           {cta.title}
         </h2>
-        <p class="text-[#666666] mb-6 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+        <p 
+          class="mb-6 max-w-2xl mx-auto leading-relaxed" 
+          style="color: var(--color-body-base);" 
+          data-aos="fade-up" 
+          data-aos-delay="100"
+        >
           {cta.description}
         </p>
         <Button 
@@ -59,23 +68,27 @@ const currentYear = new Date().getFullYear();
       </div>
     )}
 
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-[#BFA67D]/30 pb-12">
+    <div 
+      class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12" 
+      style="border-bottom: 1px solid var(--color-secondary-light);"
+    >
       <div class="col-span-1">
         <Logo variant="footer" />
-        <p class="mt-4 text-sm text-[#666666] leading-relaxed">
+        <p class="mt-4 text-sm leading-relaxed" style="color: var(--color-body-base);">
           تمتع بتجربة استضافة أحداث أكثر سلامة وتنظيما
         </p>
       </div>
 
       <div class="col-span-1">
-        <h3 class="text-lg font-semibold text-[#3D2415] mb-4">روابط مهمة</h3>
+        <h3 class="text-lg font-semibold mb-4" style="color: var(--color-headline);">روابط مهمة</h3>
         <nav>
           <ul class="space-y-2">
             {footerMenu.map(item => (
               <li>
                 <a 
                   href={item.link} 
-                  class="text-base text-[#666666] hover:text-[#A48963] transition-colors duration-200"
+                  class="text-base transition-colors duration-200 hover:text-[var(--color-accent)]"
+                  style="color: var(--color-body-base);"
                 >
                   {item.name}
                 </a>
@@ -88,9 +101,9 @@ const currentYear = new Date().getFullYear();
       {/* Add more columns here if needed */}
     </div>
 
-    <div class="mt-10 flex flex-col md:flex-row justify-between items-center text-[#666666] text-sm">
+    <div class="mt-10 flex flex-col md:flex-row justify-between items-center text-sm" style="color: var(--color-body-base);">
       <div>
-        © {currentYear} <span class="text-[#3D2415] font-medium">{siteConfig.companyName}</span>. All rights reserved.
+        © {currentYear} <span class="font-medium" style="color: var(--color-headline);">{siteConfig.companyName}</span>. All rights reserved.
       </div>
 
       <nav class="mt-4 md:mt-0">
@@ -99,7 +112,7 @@ const currentYear = new Date().getFullYear();
             <li>
               <a 
                 href={item.link} 
-                class="hover:text-[#A48963] transition-colors duration-200"
+                class="transition-colors duration-200 hover:text-[var(--color-accent)]"
               >
                 {item.name}
               </a>
@@ -110,5 +123,6 @@ const currentYear = new Date().getFullYear();
     </div>
   </div>
 </footer>
+
 
 

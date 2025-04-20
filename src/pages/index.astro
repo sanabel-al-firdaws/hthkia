@@ -151,27 +151,39 @@ const recentPostsSection = {
 }
 import { Image } from 'astro:assets';
 import Card from '@components/Card.astro';
+import Button from '@components/ui/Button.astro';
 
 ---
 
 <Layout footerCta={FooterCta} title={seoTitle} description={seoDescription}>
     <Hero content={heroContent} />
 
-    <section class="relative py-12 bg-[#E2E0DF]">
+    <section class="relative py-12" style="background-color: var(--color-background);">
         <div class="site-container mx-auto px-4">
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-            
             <Card title="حراسة شخصية" subtitle="في الرياض" image={image} />
             <Card title="إدارة حشود" subtitle="في جدة" image={image1} />
-            <!-- <Card title="حراسة شخصية" subtitle="في الرياض" image={image2} /> -->
+            {/* <Card title="حراسة شخصية" subtitle="في الرياض" image={image2} /> */}
             <Card title="إدارة حشود" subtitle="في جدة" image={image3} />
             <Card title="حراسة شخصية" subtitle="في الرياض" image={image4} />
             <Card title="إدارة حشود" subtitle="في جدة" image={image5} />
- 
+          </div>
+      
+          {/* View More Button */}
+          <div class="mt-12 flex justify-center" data-aos="fade-up" data-aos-delay="200">
+            <Button 
+              href="/work" 
+              variant="primary"
+              class="text-base font-semibold px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+            >
+              عرض المزيد من أعمالنا
+            </Button>
           </div>
         </div>
       </section>
-    <Features content={featuresSection} padding="base" background="light" />
+      
+      <Features content={featuresSection} padding="base" background="light" />
+      
     <!-- <RecentPosts content={recentPostsSection} background="base" padding="base" postsToShow={3} category="Theme Usage"/> -->
     <!-- <SplitPanel content={styleGuideSection} imagePosition="right" background="dark" padding="base" />
     <SplitPanel content={styleGuideSection2} imagePosition="left" background="dark" padding="base" />

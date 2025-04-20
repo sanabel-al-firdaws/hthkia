@@ -19,9 +19,9 @@ export const SEO = {
 };
   
 export const blogSetting = {
-  postsPerPage: 6   
+  postsPerPage: 10  
 }
 
 export const themeSetting = {
-  theme: 'zeus'
+  theme: 'main'
 }
