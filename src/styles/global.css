@@ -79,15 +79,20 @@
     --border-radius-base: 1rem;
     --border-radius-large: 2rem;
     
+    
     --font-bruno-ace: 'Bruno Ace SC', sans-serif;
-    --font-noto-sans-kr: "Noto Sans KR", sans-serif;
-    --font-base: 'Noto Sans KR', sans-serif;
+    --font-noto-sans-ar: 'Noto Sans Arabic', sans-serif;
+    --font-base: 'Noto Sans Arabic', sans-serif;
     --font-logo: 'Bruno Ace SC', sans-serif;
-    --font-headline: 'Noto Sans KR', sans-serif;
+    --font-headline: 'Noto Sans Arabic', sans-serif;
 }
 
 @layer base {
-    
+    body { 
+        font-size: var(--text-base); 
+        font-family: var(--font-base); 
+        font-weight: 400;
+    }
 
     [data-theme="main"] {
         --color-primary: #2a5d7c;            /* Deep ocean blue */

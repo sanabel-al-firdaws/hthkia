@@ -3,6 +3,7 @@
 import Logo from '@components/Logo.astro';
 import Button from '@components/ui/Button.astro';
 import { Image } from 'astro:assets';
+import heroImage from '../../assets/image.jpg';
 
 interface HeroContent {
   title: string;
@@ -13,7 +14,6 @@ interface HeroContent {
     variant?: 'primary' | 'secondary' | 'ghostLight' | 'ghostDark';
     target?: string;
   }[];
-  backgroundImage?: string | any;
   overlayOpacity?: number;
 }
 
@@ -22,23 +22,28 @@ interface Props {
 }
 
 const { content } = Astro.props;
-const opacity = content.overlayOpacity ?? 1;
 ---
 
-<section class="header-offset relative" style="background-color: var(--color-background); color: var(--color-body-base)">
-  <div class="site-container mx-auto px-4 py-small relative z-10 flex flex-col md:items-center md:justify-center md:text-center">
-   <span class="place-self-center"> <Logo Height="100px" Width="100px"/> </span>
-   <h1 
-   class="text-4xl sm:text-5xl font-bold leading-snug" 
-   style="color: var(--color-body-base)" 
-   data-aos="fade-up"
- >
-   {content.title}
- </h1>
- 
-
+<section 
+  class="header-offset relative" 
+  style="background-color: var(--color-background); color: var(--color-body-base)"
+  dir="rtl"
+>
+  <div class="site-container mx-auto px-4 pt-16 pb-0 relative z-10 flex flex-col items-center justify-center text-center">
+    <span class="mb-6">
+      <Logo Height="100px" Width="100px"/>
+    </span>
+    
+    <h1 
+      class="text-4xl sm:text-5xl font-bold leading-snug"
+      style="color: var(--color-body-base)" 
+      data-aos="fade-up"
+    >
+      {content.title}
+    </h1>
+    
     <p 
-      class="mt-8 max-w-3xl text-xl text-balance"
+      class="mt-8 max-w-3xl text-xl mx-auto"
       style="color: var(--color-accent)" 
       data-aos="fade-up"
       data-aos-delay="100"
@@ -47,20 +52,41 @@ const opacity = content.overlayOpacity ?? 1;
     </p>
 
     {content.buttons && content.buttons.length > 0 && (
-      <div class="flex flex-wrap gap-4 mt-8 justify-center" data-aos="fade-up" data-aos-delay="200">
+      <div 
+        class="flex flex-wrap gap-4 mt-8 justify-center" 
+        data-aos="fade-up" 
+        data-aos-delay="200"
+      >
         {content.buttons.map((button) => (
           <Button
-
-            variant="primary"
+            variant={button.variant || 'primary'}
             href={button.link}
             target={button.target || '_self'}
             class="transition-colors duration-300"
-
           >
             {button.text}
           </Button>
         ))}
       </div>
     )}
+
+    <!-- Image at the bottom of the section -->
+    <div class="mt-12 w-full max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+      <Image 
+        src={heroImage} 
+        alt="Hero image"
+        class="w-full h-auto rounded-lg shadow-xl"
+        formats={['avif', 'webp', 'jpg']}
+        quality={80}
+        width={1200}
+        height={600}
+      />
+    </div>
   </div>
 </section>
+
+<style>
+  .header-offset {
+    margin-top: -var(--header-height, 0px);
+  }
+</style>

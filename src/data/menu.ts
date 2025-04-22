@@ -3,7 +3,9 @@
 export const headerMenu = [
     // { name: 'Theme Info', link: '/theme-info' },
     // { name: 'أعضاء الفريق', link: '/team' },
+
     { name: 'أعمالنا السابقة', link: '/blog' },
+    { name: 'خدماتنا', link: '/#services' },
     // { name: 'Style-Guide', link: '/style-guide', showArrow: false,
     //     children: [
     //         { name: 'Typography', link: '/style-guide#typography' },
@@ -20,6 +22,8 @@ export const footerMenu = [
 
     // { name: 'أعضاء الفريق', link: '/team' },
     { name: 'أعمالنا السابقة', link: '/blog' },
+    { name: 'خدماتنا', link: '/#services' },
+    { name: 'تواصل معنا', link: '/#contact' },
     // { name: 'Style Guide', link: '/style-guide' },
 ];
 

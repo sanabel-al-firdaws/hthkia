@@ -5,9 +5,11 @@ import Eyebrow from '@components/ui/Eyebrow.astro';
 import { getPaddingClass, getBackgroundColor, getTextColor } from '@utils/styleUtils';
 import type { PaddingSize, ThemeColor } from '@utils/styleUtils';
 
-export interface Props {
+export interface Props { 
+    id?: string;
     content: {
         eyebrow?: string;
+       
         title?: string;
         description?: string;
         button?: {
@@ -23,13 +25,13 @@ export interface Props {
     paddingBottom?: PaddingSize;
 }
 
-const {
+const {id,
     content: {
         eyebrow,
         title,
         description,
         button,
-        features
+        features, 
     },
     background = 'base'
 } = Astro.props;
@@ -42,7 +44,7 @@ const paddingClass = getPaddingClass({
     paddingBottom: Astro.props.paddingBottom 
 });
 ---
-<section class:list={["relative", "py-20"]} style="background-color: var(--color-background-light);">
+<section id={id} class:list={["relative", "py-20"]} style="background-color: var(--color-background-light);">
   <div class="site-container px-4">
     {(title || description) && (
       <div class="text-center mb-16 max-w-3xl mx-auto">

@@ -1,3 +1,5 @@
+now add improvments here
+
 ---
 import Layout from '@layouts/Layout.astro';
 import Hero from '@components/sections/Hero.astro';
@@ -13,102 +15,127 @@ import Faqs from '@components/sections/Faqs.astro';
 import { faqLists } from '@data/faqs';
 import RecentPosts from '@components/sections/RecentPosts.astro';
 import heroImage from '../assets/images/home/default-hero-2.jpg';
-import image from '../content/blog/images/imagination-park.jpg';
+import image from '../content/blog/images/direya.webp';
 import image1 from '../content/blog/images/electric-car-rally.jpg';
-import image2 from '../content/blog/images/flower-festival.jpg';
+import image2 from '../content/blog/images/formula-1.webp';
 import image3 from '../content/blog/images/hail.jpg';
 import image4 from '../content/blog/images/noor-riyadh.jpg';
 
 
 
-const seoTitle = "حشود ذكية | SmartCrowds";
-const seoDescription = 'نقوم بتوفير خدمات  تنظيم سير الحشود والحراسة الأمنية للأفراد البارزين';
+
+const seoTitle = "الحشود الذكية";
+const seoDescription = 'شركة متخصصة في إدارة الحشود وتنظيم حركة الأفراد في المواقع العامة والفعاليات الكبرى';
 
 const heroContent = {
-    title:  'متخصصون في  تنظيم الحشود وتأمينهم' , 
-    description: 'نقوم بتوفير خدمات  تنظيم سير الحشود والحراسة الأمنية للأفراد البارزين',
-    // buttons: [
-    //     {
-    //         text: 'تواصل معنا',
-    //         link: '/contact',
-    //         target: '_self'
-    //     }
-    // ],
+    title: 'الحشود الذكية',
+    description: 'شركة متخصصة في تنظيم وتوجيه حركة الأفراد في المواقع العامة أو الفعاليات الكبرى بطريقة تضمن السلامة والراحة لجميع الحاضرين',
+
     backgroundImage: heroImage,
     overlayOpacity: 0.2
 }
- 
 
 const featuresSection = {
-    // eyebrow: "CORE FEATURES",
-    title: "ما الذي يميزنا عن غيرنا؟",
-    // description: "SmartCrowds gives you a solid foundation with essential features while staying lightweight and customizable. Start with a clean slate and build exactly what you need without the bloat.",
+    title: "مهمتنا",
     features: featureLists.main.features,
-    // button: {
-    //     text: "View Theme Info",
-    //     link: "/theme-info",
-    //     variant: "primary" as const
-    // }
 }
 
+const secondaryFeatures = {
+    title: "خدماتنا",
+    features: featureLists.secondary.features,
+}
+
+
 const FooterCta = {
-    // eyebrow: "Join The Community",
-    title: 'Start Building With SmartCrowds Today',
-    description: 'SmartCrowds is open-source and constantly improving. Join our community of developers to contribute, get support, or showcase what you\'ve built.',
-    hideCta: true,
+    title: 'تواصل معنا',
+    description: 'هل لديك فعالية أو موقع بحاجة إلى تنظيم؟ اتصل بنا وسنكون شريكك في النجاح.',
     button: {
-        text: 'Download SmartCrowds',
-        link: 'https://github.com/rspisarski/titan-core',
-        target: '_blank'
+        text: 'اتصل بنا الآن',
+        link: '#contact',
+        target: '_self'
     }
 }
 
-
-
+const pastProjects = [
+    {
+        title: "موسم الدرعية",
+        subtitle: "في الرياض",
+        image: image,
+        link: "/blog/direya"
+    },
+    {
+        title: "رالي السيارات الكهربائية",
+        subtitle: "في العلا",
+        image: image1,
+        link: "/blog/electric-car-rally"
+    },
+    {
+        title: "سباق الفورميلا 1",
+        subtitle: "في جدة",
+        image: image2,
+        link: "/blog/formula-1"
+    },
+    {
+        title: "موسم حائل 2020",
+        subtitle: "في حائل",
+        image: image3,
+        link: "/blog/hail"
+    },
+    {
+        title: "نور الرياض 2022",
+        subtitle: "في الرياض",
+        image: image4,
+        link: "/blog/noor-riyadh"
+    }
+]
 
 import { Image } from 'astro:assets';
 import Card from '@components/Card.astro';
 import Button from '@components/ui/Button.astro';
-
+import ContactInfo from '@components/sections/ContactInfo.astro';
 ---
 
-<Layout footerCta={FooterCta} title={seoTitle} description={seoDescription}>
-    <Hero content={heroContent} />
+<Layout  title={seoTitle} description={seoDescription}>
+    <Hero  content={heroContent} />
+
+
+
+    <Features  content={featuresSection} padding="base" background="light" />
+    
+    <Features id="services" content={secondaryFeatures} padding="base" background="dark" />
 
     <section class="relative py-12" style="background-color: var(--color-background);">
         <div class="site-container mx-auto px-4">
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-            <Card title="Imagination Park" subtitle="في الرياض" image={image} link="/blog/imagination-park" />
-            <Card title="رالي السيارات الكهربائية" subtitle="في العلا" image={image1} link="/blog/electric-car-rally" />
-            <Card title="مهرجان الزهور" subtitle="في ينبع الصناعية" image={image2} link="/blog/flower-festival" />
-            <Card title="موسم حائل 2020" subtitle="في حائل" image={image3} link="/blog/hail" />
-            <Card title="نور الرياض 2022" subtitle="في الرياض" image={image4} link="/blog/noor-riyadh" />
+            <h2 class="text-3xl font-bold text-center mb-12">أعمالنا السابقة</h2>
+            <h2 class="text-3xl font-bold text-center mb-12">لقد تشرفنا بالعمل في</h2>
 
-          </div>
+      
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+                {pastProjects.map(project => (
+                    <Card 
+                        title={project.title} 
+                        subtitle={project.subtitle} 
+                        image={project.image} 
+                        link={project.link} 
+                    />
+                ))}
+            </div>
        
-          {/* View More Button */}
-          <div class="mt-12 flex justify-center" data-aos="fade-up" data-aos-delay="200">
-            <Button 
-              href="/blog" 
-              variant="primary"
-              class="text-base font-semibold px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
-            >
-              عرض المزيد من أعمالنا
-            </Button>
-          </div>
+            <div class="mt-12 flex justify-center" data-aos="fade-up" data-aos-delay="200">
+                <Button 
+                    href="/blog" 
+                    variant="primary"
+                    class="text-base font-semibold px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                    عرض المزيد من أعمالنا
+                </Button>
+            </div>
         </div>
-      </section>
-      
-      <Features content={featuresSection} padding="base" background="light" />
-      
-    <!-- <RecentPosts content={recentPostsSection} background="base" padding="base" postsToShow={3} category="Theme Usage"/> -->
-    <!-- <SplitPanel content={styleGuideSection} imagePosition="right" background="dark" padding="base" />
-    <SplitPanel content={styleGuideSection2} imagePosition="left" background="dark" padding="base" />
-    <SplitPanel content={styleGuideSection} imagePosition="right" background="light" padding="base" /> -->
+    </section>
+
+    <section id="contact" class="py-16 color-background-light">
+      <ContactInfo background="base" padding="base" />
+    </section>
 
 
-    <!-- <CtaBanner content={mainCta} variant="contained" background="light" paddingBottom="base" />
-    <Logos content={logosSection} background="base" padding='small'/>
-    <Stats content={sideBySideStats} background='dark' padding="base"/>
-    <Faqs content={faqsSection} background="base" padding="base" /> -->
 </Layout>

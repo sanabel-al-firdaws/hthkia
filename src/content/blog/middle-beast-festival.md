@@ -3,7 +3,7 @@
 title: "مهرجان ميدل بيست"
 excerpt: "الإشراف على التحكم في الحشود وضمان سلامة الحضور في أحد أكبر المهرجانات الموسيقية في المنطقة."
 publishDate: "2025-04-20"
-publish: true
+publish: false
 categories: ["مشاريع"]
 featuredImage: "./images/mdlbeast.jpg"
 
