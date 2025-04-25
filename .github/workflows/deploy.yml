@@ -36,4 +36,3 @@ jobs:
           git add .
           git commit -m "Deploy to prod branch via GitHub Actions"
           git push origin prod --force
-
