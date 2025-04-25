@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0  # Needed to get all history for the branch
 
       - name: Install, build, and upload your site output
-        uses: withastro/action@v5
+        uses: withastro/action@v4
 
       - name: Move dist to prod branch
         run: |
