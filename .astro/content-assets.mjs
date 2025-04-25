@@ -1,0 +1,13 @@
+
+import __ASTRO_IMAGE_IMPORT_12uvkc from "./images/imagination-park.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2FImagination-park.md";
+import __ASTRO_IMAGE_IMPORT_Z5YnR0 from "./images/ceer-electric-car.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fceer-electric-car.md";
+import __ASTRO_IMAGE_IMPORT_NzRdt from "./images/direya.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fdireya.md";
+import __ASTRO_IMAGE_IMPORT_1CLtOv from "./images/electric-car-rally.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Felectric-car-rally.md";
+import __ASTRO_IMAGE_IMPORT_Z28JXMa from "./images/flower-festival.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fflower-festival.md";
+import __ASTRO_IMAGE_IMPORT_Z1lR39C from "./images/formula-1.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fformula-1.md";
+import __ASTRO_IMAGE_IMPORT_SEDDK from "./images/hail.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fhail.md";
+import __ASTRO_IMAGE_IMPORT_2azqGF from "./images/mdlbeast.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fmiddle-beast-festival.md";
+import __ASTRO_IMAGE_IMPORT_Z1odXjp from "./images/newcastel.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fnewcastel.md";
+import __ASTRO_IMAGE_IMPORT_ZXvCDF from "./images/noor-riyadh.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fnoor-riyadh.md";
+export default new Map([["./images/imagination-park.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2FImagination-park.md", __ASTRO_IMAGE_IMPORT_12uvkc], ["./images/ceer-electric-car.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fceer-electric-car.md", __ASTRO_IMAGE_IMPORT_Z5YnR0], ["./images/direya.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fdireya.md", __ASTRO_IMAGE_IMPORT_NzRdt], ["./images/electric-car-rally.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Felectric-car-rally.md", __ASTRO_IMAGE_IMPORT_1CLtOv], ["./images/flower-festival.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fflower-festival.md", __ASTRO_IMAGE_IMPORT_Z28JXMa], ["./images/formula-1.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fformula-1.md", __ASTRO_IMAGE_IMPORT_Z1lR39C], ["./images/hail.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fhail.md", __ASTRO_IMAGE_IMPORT_SEDDK], ["./images/mdlbeast.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fmiddle-beast-festival.md", __ASTRO_IMAGE_IMPORT_2azqGF], ["./images/newcastel.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fnewcastel.md", __ASTRO_IMAGE_IMPORT_Z1odXjp], ["./images/noor-riyadh.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fnoor-riyadh.md", __ASTRO_IMAGE_IMPORT_ZXvCDF]]);
+		
