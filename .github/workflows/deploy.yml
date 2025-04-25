@@ -1,35 +1,39 @@
-name: Generate a build and push to Hostinger static files
+name: Deploy to Hostinger
 
 on:
-  push:
-    branches:
-      - main # The branch name you are committing the new changes to
+  workflow_dispatch:
+
+permissions:
+  contents: write  # Added this to allow pushing to branches
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [22]
-
-    name: Build and Push
     steps:
-      - name: git-checkout
+      - name: Checkout your repository using git
         uses: actions/checkout@v4
-
-      - name: Install all dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build # The build command of your project
-
-      - name: copy file via ssh scp key
-        uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets.HOSTINGER_HOST }}
-          username: ${{ secrets.HOSTINGER_USERNAME }}
-          key: ${{ secrets.HOSTINGER_KEY }}
-          port: ${{ secrets.HOSTINGER_PORT }}
-          source: /home/runner/work/hthkia.com/hthkia.com/dist/
-          target: domains/hthkia.com/public_html/
-          strip_components: 3
+          fetch-depth: 0  # Needed to get all history for the branch
+
+      - name: Install, build, and upload your site output
+        uses: withastro/action@v5
+
+      - name: Move dist to prod branch
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          
+          # Create or switch to prod branch
+          git checkout --orphan prod
+          git rm -rf .
+          
+          # Copy dist contents to root
+          cp -r dist/* .
+          
+          # Commit and push
+          git add .
+          git commit -m "Deploy to prod branch via GitHub Actions"
+          git push origin prod --force
+
