@@ -1,0 +1,8 @@
+{
+    "name": "hthkia",
+    "compatibility_date": "2025-7-13",
+    "assets": {
+        "directory": "./dist/",
+        "not_found_handling": "404-page"
+    }
+}
